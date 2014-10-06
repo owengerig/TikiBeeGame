@@ -117,6 +117,18 @@ namespace TikiBeeGame {
             HEALTH = Mathf.RoundToInt(HEALTH_MULTIPLIER * 100.0f); ;
             SCORE = 0;
         }
+        virtual public void spawnLocationOnly() {
+            if (!this.gameObject.activeSelf) {
+                this.gameObject.SetActive(true);
+            }
+            if (!this.enabled) {
+                this.enabled = true;
+            }
+
+            PreferencesManager.END_GAME = false;
+
+            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
+        }
 
         #region FLYING MOVEMENT
         virtual public void flyCharacterToMouseClick() {

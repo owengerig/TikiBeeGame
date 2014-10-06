@@ -50,7 +50,8 @@ namespace TikiBeeGame{
                     }
                 }
                 ((PlayerController)PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>()).spawn();
-            }
+			}
+            ((PlayerController)PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>()).spawnLocationOnly();
         }
 
         virtual public void Update() {
