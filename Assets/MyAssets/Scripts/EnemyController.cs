@@ -28,7 +28,7 @@ namespace TikiBeeGame
                 }
 
                 public void giveDamge(int damage) {
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().takeDamage(damage);
+                    PreferencesManager.getPlayerController().takeDamage(damage);
                     MAXDAMAGE -= damage;
                 }
 

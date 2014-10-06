@@ -3,7 +3,6 @@
 
 namespace TikiBeeGame {
     class PortalController : PowerupController {
-        public bool isReturnPortal = false;
         // Use this for initialization
         void Start() {
             this.HEALTHBONUS = 10;
@@ -12,9 +11,7 @@ namespace TikiBeeGame {
 
         // Update is called once per frame
         void Update() {
-            if (!isReturnPortal) {
-                Invoke("DestroyMe", 8f);
-            }
+            Invoke("DestroyMe", 8f);
         }
 
         override public void DestroyMe() {
@@ -40,11 +37,7 @@ namespace TikiBeeGame {
         }
 
         public void teleportToSecretWorld() {
-            if (isReturnPortal) {
-                LevelController.returnToLevel();
-            } else {
-                LevelController.loadSecretLevel1Scene();
-            }
+            LevelController.loadSecretLevel1Scene();
         }
     }
 }

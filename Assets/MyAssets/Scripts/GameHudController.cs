@@ -103,22 +103,23 @@ namespace TikiBeeGame
 
             #region end game menu
             if (PreferencesManager.END_GAME) {
-                if (score > PreferencesManager.CURRENT_SCORE_REQUIREMENT) {
-                    if (GUI.Button(new Rect(75, 175, 140, 40), "Continue", menuButtonStyle)) {
-                        PreferencesManager.END_GAME = false;
-                        LevelController.loadNextLevelWithLevelMap();
-                    }
-                    runEmitter(fireworkParticleSystem);
-                    if (instantiatedFireworkParticleSystem.Count < UnityEngine.Random.Range(0f, 2f)) {
-                        ParticleEmitter pe = Instantiate(fireworkParticleSystem) as ParticleEmitter;
-                        pe.transform.position = new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 1f);
-                        instantiatedFireworkParticleSystem.Add(pe);
-                    }
-                    Invoke("moveFireworks", 2);
-                    Invoke("stopFireworks", 10);
-                } else {
-                    GUI.Label(new Rect(25, 75, 300, 100), "You Lose.  Total Score of " + score + " is less then " + PreferencesManager.CURRENT_SCORE_REQUIREMENT, endGameLabelStyle);
-                }
+                //no longer need this since we removed score requirements
+                //if (score > PreferencesManager.CURRENT_SCORE_REQUIREMENT) {
+                //    if (GUI.Button(new Rect(75, 175, 140, 40), "Continue", menuButtonStyle)) {
+                //        PreferencesManager.END_GAME = false;
+                //        LevelController.loadNextLevelWithLevelMap();
+                //    }
+                //    runEmitter(fireworkParticleSystem);
+                //    if (instantiatedFireworkParticleSystem.Count < UnityEngine.Random.Range(0f, 2f)) {
+                //        ParticleEmitter pe = Instantiate(fireworkParticleSystem) as ParticleEmitter;
+                //        pe.transform.position = new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 1f);
+                //        instantiatedFireworkParticleSystem.Add(pe);
+                //    }
+                //    Invoke("moveFireworks", 2);
+                //    Invoke("stopFireworks", 10);
+                //} else {
+                //    GUI.Label(new Rect(25, 75, 300, 100), "You Lose.  Total Score of " + score + " is less then " + PreferencesManager.CURRENT_SCORE_REQUIREMENT, endGameLabelStyle);
+                //}
                 //restart button
                 if (GUI.Button(new Rect(1920 - buttonWidth, 0, buttonWidth, maxHeight), restartHudIcon)) {
                     Time.timeScale = 1.0f;

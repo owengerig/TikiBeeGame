@@ -50,8 +50,9 @@ namespace TikiBeeGame{
                     }
                 }
                 ((PlayerController)PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>()).spawn();
-			}
-            ((PlayerController)PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>()).spawnLocationOnly();
+            } else {
+                ((PlayerController)PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>()).spawnLocationOnly();
+            }
         }
 
         virtual public void Update() {
@@ -60,6 +61,7 @@ namespace TikiBeeGame{
                     GameObject heliWallGO = Instantiate(heliWallEnemy) as GameObject;
                     heliWallGO.GetComponent<HeliWallController>().spawn();
                     heliWallGO.GetComponent<HeliWallController>().DAMAGE = (int)Random.Range(1f, 5f);
+                    heliWallGO.GetComponent<HeliWallController>().MAXDAMAGE = (int)Random.Range(30f, 50f);
                     numberOfHeliWallsSpawned++;
                 }
                 if (numberOfHeartsSpawned < numberOfHeartsAllowed) {

@@ -2,7 +2,6 @@
 
 namespace TikiBeeGame {
     class SecretLevel1GameController:GameController {
-        private GameObject exitPortal;
         private bool spawnedPowerups = false;
 
         void Start() {
@@ -18,10 +17,6 @@ namespace TikiBeeGame {
             numberOfPortalsSpawned = 0;
 
             spawnPlayers();
-
-            exitPortal = Instantiate(portal) as GameObject;
-            exitPortal.GetComponent<PortalController>().isReturnPortal = true;
-            exitPortal.GetComponent<PortalController>().spawn();
         }
 
         override public void Update() {

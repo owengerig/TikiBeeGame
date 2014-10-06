@@ -12,3 +12,4 @@ C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Tem
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\bin\Debug\Assembly-CSharp.pdb

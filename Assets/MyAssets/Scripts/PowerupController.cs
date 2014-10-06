@@ -40,8 +40,8 @@ namespace TikiBeeGame
 
                 if (other.CompareTag("Player")) {
                     PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainScore(SCOREBONUS);
-				PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainHealth(HEALTHBONUS);
-				PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainCurrency(CURRENCYBONUS);
+                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainHealth(HEALTHBONUS);
+                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainCurrency(CURRENCYBONUS);
 
                     GetComponent<Animator>().SetTrigger("shouldDissappear");
                 }

@@ -39,34 +39,27 @@ namespace TikiBeeGame {
         }
         public static void loadLevel1Scene() {
             FadeScene.LoadLevel(LEVEL_1_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
-            setScoreRequirement();
         }
         public static void loadLevel2Scene() {
             FadeScene.LoadLevel(LEVEL_2_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
-            setScoreRequirement();
         }
         public static void loadLevel3Scene() {
             FadeScene.LoadLevel(LEVEL_3_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
-            setScoreRequirement();
         }
         public static void loadLevel4Scene() {
             FadeScene.LoadLevel(LEVEL_4_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
-            setScoreRequirement();
         }
         public static void loadSecretLevel1Scene() {
             if (Application.loadedLevel == SECRET_LEVEL_1_INDEX) { return; }
             PreferencesManager.DESTINATION_LEVEL_INDEX = Application.loadedLevel;
             FadeScene.LoadLevel(SECRET_LEVEL_1_INDEX, levelFadeInTime, levelFadeOutTime, Color.green);
-            PreferencesManager.DESTINATION_LEVEL_SCORE_REQUIREMENT = PreferencesManager.CURRENT_SCORE_REQUIREMENT;
-            setScoreRequirement();
         }
         public static void loadCreditsScene() {
-            if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().DestroyMe(); }
+            if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.SetActive(false); }
             FadeScene.LoadLevel(CREDITS_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void returnToLevel() {
             loadLevel(PreferencesManager.DESTINATION_LEVEL_INDEX);
-            PreferencesManager.CURRENT_SCORE_REQUIREMENT = PreferencesManager.DESTINATION_LEVEL_SCORE_REQUIREMENT;
         }
         public static void reloadCurrentLevel() {
             if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().DestroyMe(); }
@@ -89,7 +82,12 @@ namespace TikiBeeGame {
                 PreferencesManager.DESTINATION_LEVEL_INDEX = Application.loadedLevel + 1;
             }
             PreferencesManager.SOURCE_LEVEL_INDEX = Application.loadedLevel;
-            loadLevel(LEVEL_MAP_INDEX);
+
+            if (PreferencesManager.DESTINATION_LEVEL_INDEX == CREDITS_INDEX) {
+                loadLevel(CREDITS_INDEX);
+            } else {
+                loadLevel(LEVEL_MAP_INDEX);
+            }
         }
 
         public static void loadLastLevel() {
@@ -113,7 +111,7 @@ namespace TikiBeeGame {
 
         public static void loadLevel(int index) {
 
-            if (index >= CREDITS_INDEX) {
+            if (index > CREDITS_INDEX) {
                 loadMainMenuScene();
                 return;
             }
@@ -165,22 +163,6 @@ namespace TikiBeeGame {
             
             if (index == CREDITS_INDEX) {
                 loadCreditsScene();
-            }
-        }
-
-        public static void setScoreRequirement() {
-            if (Application.loadedLevel == LEVEL_1_INDEX) {
-                PreferencesManager.CURRENT_SCORE_REQUIREMENT = PreferencesManager.LEVEL_1_SCORE_REQUIREMENT + PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().SCORE;
-            } else if (Application.loadedLevel == LEVEL_2_INDEX) {
-                PreferencesManager.CURRENT_SCORE_REQUIREMENT = PreferencesManager.LEVEL_2_SCORE_REQUIREMENT + PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().SCORE;
-            } else if (Application.loadedLevel == LEVEL_3_INDEX) {
-                PreferencesManager.CURRENT_SCORE_REQUIREMENT = PreferencesManager.LEVEL_3_SCORE_REQUIREMENT + PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().SCORE;
-            } else if (Application.loadedLevel == LEVEL_4_INDEX) {
-                PreferencesManager.CURRENT_SCORE_REQUIREMENT = PreferencesManager.LEVEL_4_SCORE_REQUIREMENT + PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().SCORE;
-            } else if (Application.loadedLevel == SECRET_LEVEL_1_INDEX) {
-                PreferencesManager.CURRENT_SCORE_REQUIREMENT = PreferencesManager.SECRET_LEVEL_1_SCORE_REQUIREMENT + PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().SCORE;
-            } else { 
-                PreferencesManager.CURRENT_SCORE_REQUIREMENT = 100; 
             }
         }
     }

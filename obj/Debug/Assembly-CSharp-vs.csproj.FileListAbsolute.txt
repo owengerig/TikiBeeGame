@@ -9,4 +9,3 @@ C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Tem
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp.pdb
-C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache

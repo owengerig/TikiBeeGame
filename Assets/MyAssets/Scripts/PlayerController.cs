@@ -66,7 +66,7 @@ namespace TikiBeeGame {
             }
         }
         public virtual void OnBecameInvisible() {
-            loseLevel();
+            //loseLevel();
         }
         //we are using fixed update and because of that dont need to times the below by delta.time
         virtual public void FixedUpdate() {
@@ -103,12 +103,8 @@ namespace TikiBeeGame {
             DontDestroyOnLoad(transform.gameObject);
         }
         virtual public void spawn() {
-            if (!this.gameObject.activeSelf) {
-                this.gameObject.SetActive(true);
-            }
-            if (!this.enabled) {
-                this.enabled = true;
-            }
+            this.gameObject.SetActive(true);
+            this.enabled = true;
 
             PreferencesManager.END_GAME = false;
 
@@ -118,12 +114,8 @@ namespace TikiBeeGame {
             SCORE = 0;
         }
         virtual public void spawnLocationOnly() {
-            if (!this.gameObject.activeSelf) {
-                this.gameObject.SetActive(true);
-            }
-            if (!this.enabled) {
-                this.enabled = true;
-            }
+            this.gameObject.SetActive(true);
+            this.enabled = true;
 
             PreferencesManager.END_GAME = false;
 
@@ -244,19 +236,11 @@ namespace TikiBeeGame {
 
             //adjust score
             this.SCORE += Mathf.RoundToInt(score * this.SCORE_MODIFIER);
-
-            //loadedlevel 8 is secret level which we dont want a finish screen for
-            if (this.SCORE > PreferencesManager.CURRENT_SCORE_REQUIREMENT) {
-                Invoke("winLevel", 1f);
-            }
-
         }
 
         virtual public void gainCurrency(int amount) {
             this.CURRENCY += amount;
-            SaveObject so = PersistantData.Load();
-            so.PLAYER_CURRENCY = this.CURRENCY;
-            PersistantData.Save(so);
+            saveCurrencyToPersistantStore();
         }
 
         virtual public void activateBurst() {
@@ -294,17 +278,9 @@ namespace TikiBeeGame {
             this.SHIELD_ACTIVE = false;
             shieldParticleSystem.Stop();
         }
-        virtual public void winLevel() {
-            if (Application.loadedLevel != 8) {
-                saveCurrencyToPersistantStore();
-                PreferencesManager.END_GAME = true;
-            }
-        }
         virtual public void loseLevel() {
             GetComponent<Animator>().SetTrigger("DeathTrigger");
             runParticle(deathParticleSystem);
-
-            saveCurrencyToPersistantStore();
             PreferencesManager.END_GAME = true;
         }
 
@@ -322,7 +298,7 @@ namespace TikiBeeGame {
         }
         virtual public void saveCurrencyToPersistantStore() {
             SaveObject so = PersistantData.Load();
-            this.CURRENCY = so.PLAYER_CURRENCY;
+            so.PLAYER_CURRENCY = this.CURRENCY + so.PLAYER_CURRENCY;
             PersistantData.Save(so);
         }
     }

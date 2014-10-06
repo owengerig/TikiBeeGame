@@ -4,6 +4,8 @@ using System.Collections;
 namespace TikiBeeGame {
     public class CreditsHudController : HudController {
 
+        public GUIStyle totalScoreLabelStyle;
+
         void Start() {
         }
 
@@ -31,6 +33,12 @@ namespace TikiBeeGame {
             if (GUI.Button(new Rect(300, bottonBottom, 270, 60), "Main Menu", menuButtonStyle)) {
                 LevelController.loadMainMenuScene();
             }
+            int score = 0;
+            if (PreferencesManager.getPlayerController() != null) {
+                score = PreferencesManager.getPlayerController().SCORE;
+            }
+            GUI.Label(new Rect(1300, bottonBottom, 300, 100), "Total Score: " + score, totalScoreLabelStyle);
+
         }
     }
 }
