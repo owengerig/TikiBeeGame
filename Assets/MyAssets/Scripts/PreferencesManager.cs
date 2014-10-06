@@ -7,7 +7,7 @@ using UnityEngine;
 namespace TikiBeeGame {
     static class PreferencesManager {
 
-        static public string GAME_VERSION = "0.0.1.350";
+        static public string GAME_VERSION = "0.0.1.365";
 
         static public bool END_GAME = false;  //used for signalling to the game controller to stop spawning because of endgame
         static public bool TIKIBEE_SELECTED = false;

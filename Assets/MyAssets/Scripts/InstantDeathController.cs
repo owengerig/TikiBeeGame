@@ -10,7 +10,7 @@ namespace TikiBeeGame {
         }
         void Update() {
             if (PreferencesManager.getPlayerController() == null || PreferencesManager.END_GAME) { return; }
-            float currentPlayersHealth = PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().HEALTH;
+            float currentPlayersHealth = PreferencesManager.getPlayerController().HEALTH;
 
             this.DAMAGE = Mathf.RoundToInt(currentPlayersHealth * 2);
             this.MAXDAMAGE = Mathf.RoundToInt(currentPlayersHealth * 4);

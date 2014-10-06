@@ -39,9 +39,9 @@ namespace TikiBeeGame
                 Logger.logPowerup(other.tag + " hit OnTriggerEnter2D on " + this.tag);
 
                 if (other.CompareTag("Player")) {
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainScore(SCOREBONUS);
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainHealth(HEALTHBONUS);
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainCurrency(CURRENCYBONUS);
+                    PreferencesManager.getPlayerController().gainScore(SCOREBONUS);
+                    PreferencesManager.getPlayerController().gainHealth(HEALTHBONUS);
+                    PreferencesManager.getPlayerController().gainCurrency(CURRENCYBONUS);
 
                     GetComponent<Animator>().SetTrigger("shouldDissappear");
                 }

@@ -74,7 +74,7 @@ namespace TikiBeeGame
             /////////////////////////////////////////////////////////////////////
 
             if (PreferencesManager.CURRENT_PLAYER == null) { return; }
-            playerController = PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>();
+            playerController = PreferencesManager.getPlayerController();
 
             int health = playerController.HEALTH;
             int score = playerController.SCORE;
@@ -118,7 +118,7 @@ namespace TikiBeeGame
                 //    Invoke("moveFireworks", 2);
                 //    Invoke("stopFireworks", 10);
                 //} else {
-                   GUI.Label(new Rect(25, 75, 300, 100), "You Lose.  Total Score of " + score, endGameLabelStyle);
+                   GUI.Label(new Rect(25, 75, 500, 500), "DEATH!!!!  Total Score: " + score, endGameLabelStyle);
                 //}
                 //restart button
                 if (GUI.Button(new Rect(1920 - buttonWidth, 0, buttonWidth, maxHeight), restartHudIcon)) {

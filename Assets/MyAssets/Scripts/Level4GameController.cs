@@ -3,7 +3,7 @@
 namespace TikiBeeGame {
     class Level4GameController : GameController {
         void Start() {
-            numberOfHeliWallsAllowed = 0;
+            numberOfHeliWallsAllowed = 2;
             numberOfHeliWallsSpawned = 0;
             numberOfHeartsAllowed = 1;
             numberOfHeartsSpawned = 0;

@@ -37,7 +37,7 @@ namespace TikiBeeGame {
             if (PreferencesManager.getPlayerController() != null) {
                 score = PreferencesManager.getPlayerController().SCORE;
             }
-            GUI.Label(new Rect(1300, bottonBottom, 300, 100), "Total Score: " + score, totalScoreLabelStyle);
+            GUI.Label(new Rect(1200, bottonBottom, 300, 100), "Total Score: " + score, totalScoreLabelStyle);
 
         }
     }

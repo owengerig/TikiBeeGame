@@ -68,7 +68,7 @@ namespace TikiBeeGame
 			float xMin = cameraPosition.x - xDist;
 			
 			// 3
-			if ( newPosition.x < xMin || newPosition.x > xMax ) {
+			if ( newPosition.x < xMin-1 || newPosition.x > xMax ) {
 				newPosition.x = Mathf.Clamp( newPosition.x, xMin, xMax );
 				moveDirection.x = -moveDirection.x;
 			}

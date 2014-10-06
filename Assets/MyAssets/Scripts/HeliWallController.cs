@@ -14,6 +14,10 @@ namespace TikiBeeGame{
 		}
 
         void OnBecameInvisible() {
+            Invoke("DestroyMe", 2f);
+        }
+
+        public override void DestroyMe() {
             GameObject go = GameObject.FindGameObjectWithTag("GameController");
             GameController gc = null;
             if (go != null) {
@@ -22,7 +26,6 @@ namespace TikiBeeGame{
             if (gc != null) {
                 gc.numberOfHeliWallsSpawned--;
             }
-
             if (this.gameObject != null) {
                 base.DestroyMe();
             }
@@ -33,12 +36,16 @@ namespace TikiBeeGame{
 		}
 
 		override public void spawn(){
+
+            DAMAGE = (int)Random.Range(1f, 5f);
+            MAXDAMAGE = (int)Random.Range(30f, 50f);
+
 			if (!this.gameObject.activeSelf) {
 				this.gameObject.SetActive (true);
 			}
 
 
-			rigidbody2D.gravityScale = Random.Range(-1f, 1f);
+			rigidbody2D.gravityScale = Random.Range(-1.2f, 1.2f);
 			if (rigidbody2D.gravityScale >= 0) {
                 //falling down
 				transform.position = SpawnPoint.getSpawnPointAtTopOutsideBounds();

@@ -240,7 +240,6 @@ namespace TikiBeeGame {
 
         virtual public void gainCurrency(int amount) {
             this.CURRENCY += amount;
-            saveCurrencyToPersistantStore();
         }
 
         virtual public void activateBurst() {

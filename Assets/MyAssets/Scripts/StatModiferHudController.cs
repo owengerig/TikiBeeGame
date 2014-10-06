@@ -85,6 +85,13 @@ namespace TikiBeeGame {
             //(1000, 140, 80, 10)
             GUI.Label(new Rect(buttonAlignLeftX - 85, buttonAlignLeftY - 92, labelWidth + 350, labelHeight), "Total Currency: " + saveObject.PLAYER_CURRENCY.ToString(), StatModifersButtonStyle);
 
+
+            float maxHealthMultiplier = 90f;
+            float maxScoreMultiplier = 20f;
+            float maxShieldDuration = 20f;
+            float maxShieldCooldown = 20f;
+
+
             //TIKI BEE
             if (PreferencesManager.TIKIBEE_SELECTED) {
                 //health multiplier

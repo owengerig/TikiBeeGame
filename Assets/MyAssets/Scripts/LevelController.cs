@@ -22,7 +22,7 @@ namespace TikiBeeGame {
         private static int CREDITS_INDEX = 10;
 
         public static void loadMainMenuScene() {
-            if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().DestroyMe(); }
+            if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.getPlayerController().DestroyMe(); }
             FadeScene.LoadLevel(MAIN_MENU_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadSettings() {
@@ -38,15 +38,19 @@ namespace TikiBeeGame {
             FadeScene.LoadLevel(LEVEL_MAP_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadLevel1Scene() {
+            PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
             FadeScene.LoadLevel(LEVEL_1_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadLevel2Scene() {
+            PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
             FadeScene.LoadLevel(LEVEL_2_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadLevel3Scene() {
+            PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
             FadeScene.LoadLevel(LEVEL_3_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadLevel4Scene() {
+            PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
             FadeScene.LoadLevel(LEVEL_4_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadSecretLevel1Scene() {
@@ -55,6 +59,7 @@ namespace TikiBeeGame {
             FadeScene.LoadLevel(SECRET_LEVEL_1_INDEX, levelFadeInTime, levelFadeOutTime, Color.green);
         }
         public static void loadCreditsScene() {
+            PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
             if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.SetActive(false); }
             FadeScene.LoadLevel(CREDITS_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
@@ -62,7 +67,7 @@ namespace TikiBeeGame {
             loadLevel(PreferencesManager.DESTINATION_LEVEL_INDEX);
         }
         public static void reloadCurrentLevel() {
-            if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().DestroyMe(); }
+            if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.getPlayerController().DestroyMe(); }
             PreferencesManager.END_GAME = false;
             if (Application.loadedLevel == SECRET_LEVEL_1_INDEX) {
                 returnToLevel();

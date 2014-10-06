@@ -27,9 +27,9 @@ namespace TikiBeeGame {
         override public void OnTriggerEnter2D(Collider2D other) {
             if (other.CompareTag("Player")) {
                 if (!PreferencesManager.END_GAME) {
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainScore(SCOREBONUS);
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainHealth(HEALTHBONUS);
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().gainCurrency(CURRENCYBONUS);
+                    PreferencesManager.getPlayerController().gainScore(SCOREBONUS);
+                    PreferencesManager.getPlayerController().gainHealth(HEALTHBONUS);
+                    PreferencesManager.getPlayerController().gainCurrency(CURRENCYBONUS);
                     teleportToSecretWorld();
                 }
             }
