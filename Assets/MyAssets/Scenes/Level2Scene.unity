@@ -3076,10 +3076,6 @@ MonoBehaviour:
     y: 30
     width: 180
     height: 20
-  levelFadeInTime: 1
-  levelFadeOutTime: 1
-  secretLeveFadeInTime: .5
-  secretLeveFadeOutTime: .5
   healthHudIcon: {fileID: 2800000, guid: c8522edfc83852d46898475392c79f9d, type: 3}
   scoreHudIcon: {fileID: 2800000, guid: 3454586caa42b904e970a848dc00e6a5, type: 3}
   pauseHudIcon: {fileID: 2800000, guid: 8bf281f5efa53304ab2791bf2ce185f9, type: 3}
@@ -4093,7 +4089,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1054713242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0882336721, y: -3.65895176, z: 0}
+  m_LocalPosition: {x: -.0290009193, y: -3.74687958, z: 0}
   m_LocalScale: {x: .998983979, y: .998986125, z: 1}
   m_Children: []
   m_Father: {fileID: 289874396}

@@ -97,7 +97,7 @@ namespace TikiBeeGame {
             }
         }
         virtual public void stopMoving() {
-            transform.position = new Vector3(-8.2f, -2.8f, 1);
+            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
         }
         virtual public void Awake() {
             DontDestroyOnLoad(transform.gameObject);
@@ -110,7 +110,9 @@ namespace TikiBeeGame {
                 this.enabled = true;
             }
 
-            transform.position = Camera.main.ScreenToWorldPoint(new Vector3(-8.2f, -2.8f, 1));
+            PreferencesManager.END_GAME = false;
+
+            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
 
             HEALTH = Mathf.RoundToInt(HEALTH_MULTIPLIER * 100.0f); ;
             SCORE = 0;

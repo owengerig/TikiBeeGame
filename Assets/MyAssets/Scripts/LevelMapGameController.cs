@@ -89,7 +89,7 @@ namespace TikiBeeGame {
             if (PreferencesManager.CURRENT_PLAYER != null) {
                 Vector2 player = new Vector2(PreferencesManager.CURRENT_PLAYER.transform.position.x, PreferencesManager.CURRENT_PLAYER.transform.position.y);
                 if (Vector2.SqrMagnitude(player - destination) < 0.001) {
-                    PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().DestroyMe();
+                    PreferencesManager.CURRENT_PLAYER.SetActive(false) ;
                     PreferencesManager.IS_WALKING = playerMovementStyleSave;
                     LevelController.loadLevel(PreferencesManager.DESTINATION_LEVEL_INDEX);
                     PreferencesManager.END_GAME = false;
