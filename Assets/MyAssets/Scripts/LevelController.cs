@@ -64,7 +64,11 @@ namespace TikiBeeGame {
         public static void reloadCurrentLevel() {
             if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.CURRENT_PLAYER.GetComponent<PlayerController>().DestroyMe(); }
             PreferencesManager.END_GAME = false;
-            loadLevel(Application.loadedLevel);
+            if (Application.loadedLevel == SECRET_LEVEL_1_INDEX) {
+                returnToLevel();
+            } else {
+                loadLevel(Application.loadedLevel);
+            }
         }
         public static void loadNextLevel() {
             //dont want to load secret level from this so check for that

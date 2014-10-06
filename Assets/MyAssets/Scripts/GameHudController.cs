@@ -118,7 +118,7 @@ namespace TikiBeeGame
                 //    Invoke("moveFireworks", 2);
                 //    Invoke("stopFireworks", 10);
                 //} else {
-                //    GUI.Label(new Rect(25, 75, 300, 100), "You Lose.  Total Score of " + score + " is less then " + PreferencesManager.CURRENT_SCORE_REQUIREMENT, endGameLabelStyle);
+                   GUI.Label(new Rect(25, 75, 300, 100), "You Lose.  Total Score of " + score, endGameLabelStyle);
                 //}
                 //restart button
                 if (GUI.Button(new Rect(1920 - buttonWidth, 0, buttonWidth, maxHeight), restartHudIcon)) {

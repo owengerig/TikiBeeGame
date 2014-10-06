@@ -6,6 +6,7 @@ namespace TikiBeeGame {
         public Transform level1Area = null;
         public Transform level2Area = null;
         public Transform level3Area = null;
+        public Transform level4Area = null;
 
         private Vector2 destination = new Vector2(0f,0f);
         private bool moving = false;
@@ -48,6 +49,9 @@ namespace TikiBeeGame {
                 case 7:
                     PreferencesManager.CURRENT_PLAYER.transform.position = level3Area.position;
                     break;
+                case 8:
+                    PreferencesManager.CURRENT_PLAYER.transform.position = level4Area.position;
+                    break;
                 default:
                     PreferencesManager.CURRENT_PLAYER.transform.position = mainMenuArea.position;
                     break;
@@ -68,6 +72,9 @@ namespace TikiBeeGame {
                     break;
                 case 7:
                     destination = new Vector2(level3Area.position.x, level3Area.position.y);
+                    break;
+                case 8:
+                    destination = new Vector2(level4Area.position.x, level4Area.position.y);
                     break;
                 default:
                     destination = new Vector2(mainMenuArea.position.x, mainMenuArea.position.y);
