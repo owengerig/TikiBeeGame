@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{A9441D20-34E5-FA6F-3BF7-C0B58E15731A}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\2D Grid Based AI\Scripts\EnemyAStar.cs" />
+     <Compile Include="Assets\2D Grid Based AI\Scripts\GameManager.cs" />
+     <Compile Include="Assets\2D Grid Based AI\Scripts\MyPathNode.cs" />
+     <Compile Include="Assets\2D Grid Based AI\Scripts\PriorityQueue.cs" />
+     <Compile Include="Assets\2D Grid Based AI\Scripts\SpatialAStar.cs" />
+     <Compile Include="Assets\2D Grid Based AI\Scripts\TurnToWall.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\BackgroundParallax.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\BackgroundPropSpawner.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Bomb.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\BombPickup.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Destroyer.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Enemy.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Gun.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\HealthPickup.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\LayBombs.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Pauser.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\PickupSpawner.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\PlayerHealth.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Remover.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Rocket.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Score.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\ScoreShadow.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\SetParticleSortingLayer.cs" />
+     <Compile Include="Assets\2DRPK\Demo Scenes\3rd Party\Unity Platformer\Scripts\Spawner.cs" />
+     <Compile Include="Assets\2DRPK\Scripts\BasicPickup.cs" />
+     <Compile Include="Assets\2DRPK\Scripts\HorizontalMovingPlatform.cs" />
+     <Compile Include="Assets\2DRPK\Scripts\Monster.cs" />
+     <Compile Include="Assets\2DRPK\Scripts\PlayerSimpleHealth.cs" />
+     <Compile Include="Assets\2DRPK\Scripts\SwitchBackgroundColor.cs" />
+     <Compile Include="Assets\2DRPK\Scripts\VerticalMovingPlatform.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Extensions.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\MeshPiece.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabManager.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabPool.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabRule.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\RenderQueue.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Settings.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainDisplayer.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainManager.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainPiece.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainPool.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainRule.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TransformHelpers.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\VertexGenerator.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\ChaseCamera.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\CoinPickup.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\BackgroundController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\BaseCharacterController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\BombusController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\CharacterSelectionHudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\CreditsController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\CreditsHudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\DoorController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\EndlessLevelBackgroundController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\EndlessLevelCameraController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\FadeScene.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\FlameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\GameHudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\HeartController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\HeliWallController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\HudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\InstantDeathController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Level1GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Level2GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Level3GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Level4GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\LevelController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\LevelMapGameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Logger.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\MainMenuController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\MainMenuHudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\MainMenuTextController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\MantisController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PersistantData.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PortalController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PowerupController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PreferencesManager.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\RETIRED_FlameThrowerController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\RETIRED_SpeedBoostController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\SecretLevel1GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\SettingsHudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\SocialController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\SpawnPoint.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\StarController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\StatModiferHudController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\TEST.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\TikiBeeController.cs" />
+     <Compile Include="Assets\Scripts\AudioOffset.cs" />
+     <Compile Include="Assets\Scripts\CaptureNormals.cs" />
+     <Compile Include="Assets\Scripts\Punch.cs" />
+     <Compile Include="Assets\Scripts\RandomFloorBotMovement.cs" />
+     <Compile Include="Assets\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scripts\ScrollingUVs.cs" />
+     <Compile Include="Assets\Scripts\WheelsRotation.cs" />
+     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\Shaders\DiffuseReflectiveShader.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Shaders\ReflectiveDiffuseSpec.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\EdgeDetectX.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/oweng_000/Dropbox/Coding/unity workspace/Unity Projects/TikiBeeGame/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
