@@ -12,8 +12,6 @@ namespace TikiBeeGame {
             this.HEALTH = Mathf.RoundToInt(HEALTH_MULTIPLIER * 100.0f);
             this.SCORE = 0;
             this.DAMAGE = 5;
-            this.MOVE_SPEED = 2;
-            this.MOVE_SPEED_DEFAULT = 2;
             this.TURN_SPEED = 6;
             
             base.Start();
@@ -28,17 +26,20 @@ namespace TikiBeeGame {
             //load currency from persistent data
             SaveObject so = PersistantData.Load();
 
+            //add defaults
             this.CURRENCY = so.PLAYER_CURRENCY;
-            this.HEALTH_MULTIPLIER = so.TB_PLAYER_HEALTH_MODIFIER;
-            this.SCORE_MODIFIER = so.TB_PLAYER_SCORE_MODIFIER;
-            this.SHIELD_DURATION = so.TB_PLAYER_SHIELD_DURATION;
-            this.SHIELD_COOLDOWN = so.TB_PLAYER_SHIELD_COOLDOWN;
-            this.SPEED_BOOST_DURATION = so.TB_PLAYER_SPEED_BOOST_DURATION;
-            this.SPEED_BOOST_COOLDOWN = so.TB_PLAYER_SPEED_BOOST_COOLDOWN;
-            this.SPEED_BOOST_MULTIPLIER = so.TB_PLAYER_SPEED_BOOST_MULTIPLIER;
-            this.BURST_DAMAGE = so.TB_PLAYER_BURST_DAMAGE;
-            this.BURST_COOLDOWN = so.TB_PLAYER_BURST_COOLDOWN;
-            this.BURST_RADIUS = so.TB_PLAYER_BURST_RADIUS;
+            this.HEALTH_MULTIPLIER = so.TB_PLAYER_HEALTH_MODIFIER+1;
+            this.SCORE_MODIFIER = so.TB_PLAYER_SCORE_MODIFIER+1;
+            this.MOVE_SPEED = so.TB_PLAYER_SPEED_MODIFIER+2;
+            this.MOVE_SPEED_DEFAULT = so.TB_PLAYER_SPEED_MODIFIER+2;
+            this.SHIELD_DURATION = so.TB_PLAYER_SHIELD_DURATION+2;
+            this.SHIELD_COOLDOWN = 10-so.TB_PLAYER_SHIELD_COOLDOWN;
+            this.SPEED_BOOST_DURATION = so.TB_PLAYER_SPEED_BOOST_DURATION+2;
+            this.SPEED_BOOST_COOLDOWN = 10-so.TB_PLAYER_SPEED_BOOST_COOLDOWN;
+            this.SPEED_BOOST_MULTIPLIER = so.TB_PLAYER_SPEED_BOOST_MULTIPLIER+1;
+            this.BURST_DAMAGE = so.TB_PLAYER_BURST_DAMAGE+2;
+            this.BURST_COOLDOWN = 10-so.TB_PLAYER_BURST_COOLDOWN;
+            this.BURST_RADIUS = so.TB_PLAYER_BURST_RADIUS+2;
         }
     }
 }

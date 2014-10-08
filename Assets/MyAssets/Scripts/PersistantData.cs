@@ -36,28 +36,29 @@ namespace TikiBeeGame {
 
         public static void SaveDefaults() {
 			SaveObject so = new SaveObject ();
-			
-			so.PLAYER_CURRENCY = 10;
-            so.TB_PLAYER_HEALTH_MODIFIER = 1;
-            so.TB_PLAYER_SCORE_MODIFIER = 1;
-            so.TB_PLAYER_SHIELD_DURATION = 1;
-            so.TB_PLAYER_SHIELD_COOLDOWN = 10;
-            so.TB_PLAYER_SPEED_BOOST_DURATION = 1;
-            so.TB_PLAYER_SPEED_BOOST_COOLDOWN = 10;
-            so.TB_PLAYER_SPEED_BOOST_MULTIPLIER = 1.1f;
-            so.TB_PLAYER_BURST_COOLDOWN = 10;
-            so.TB_PLAYER_BURST_RADIUS = 2f;
-            so.TB_PLAYER_BURST_DAMAGE = 10;
-            so.BB_PLAYER_HEALTH_MODIFIER = 1;
-            so.BB_PLAYER_SCORE_MODIFIER = 1;
-            so.BB_PLAYER_SHIELD_DURATION = 1;
-            so.BB_PLAYER_SHIELD_COOLDOWN = 10;
-            so.BB_PLAYER_SPEED_BOOST_DURATION = 1;
-            so.BB_PLAYER_SPEED_BOOST_COOLDOWN = 10;
-            so.BB_PLAYER_SPEED_BOOST_MULTIPLIER = 1.1f;
-            so.BB_PLAYER_BURST_COOLDOWN = 10;
-            so.BB_PLAYER_BURST_RADIUS = 2f;
-            so.BB_PLAYER_BURST_DAMAGE = 10;
+
+            so.PLAYER_CURRENCY = 10;
+            so.TB_PLAYER_SPEED_MODIFIER = 0;
+            so.TB_PLAYER_HEALTH_MODIFIER = 0;
+            so.TB_PLAYER_SCORE_MODIFIER = 0;
+            so.TB_PLAYER_SHIELD_DURATION = 0;
+            so.TB_PLAYER_SHIELD_COOLDOWN = 0;
+            so.TB_PLAYER_SPEED_BOOST_DURATION = 0;
+            so.TB_PLAYER_SPEED_BOOST_COOLDOWN = 0;
+            so.TB_PLAYER_SPEED_BOOST_MULTIPLIER = 0;
+            so.TB_PLAYER_BURST_COOLDOWN = 0;
+            so.TB_PLAYER_BURST_RADIUS = 0;
+            so.TB_PLAYER_BURST_DAMAGE = 0;
+            so.BB_PLAYER_HEALTH_MODIFIER = 0;
+            so.BB_PLAYER_SCORE_MODIFIER = 0;
+            so.BB_PLAYER_SHIELD_DURATION = 0;
+            so.BB_PLAYER_SHIELD_COOLDOWN = 0;
+            so.BB_PLAYER_SPEED_BOOST_DURATION = 0;
+            so.BB_PLAYER_SPEED_BOOST_COOLDOWN = 0;
+            so.BB_PLAYER_SPEED_BOOST_MULTIPLIER = 0;
+            so.BB_PLAYER_BURST_COOLDOWN = 0;
+            so.BB_PLAYER_BURST_RADIUS = 0;
+            so.BB_PLAYER_BURST_DAMAGE = 0;
 
 			Save (so);
 		}
@@ -72,6 +73,7 @@ namespace TikiBeeGame {
     [Serializable()]
     class SaveObject : ISerializable {
         public int PLAYER_CURRENCY = 0;
+        public float TB_PLAYER_SPEED_MODIFIER = 0;
         public float TB_PLAYER_HEALTH_MODIFIER = 0;
         public float TB_PLAYER_SCORE_MODIFIER = 0;
         public float TB_PLAYER_SHIELD_DURATION = 0;
@@ -82,6 +84,7 @@ namespace TikiBeeGame {
         public float TB_PLAYER_BURST_COOLDOWN = 0;
         public float TB_PLAYER_BURST_RADIUS = 0;
         public float TB_PLAYER_BURST_DAMAGE = 0;
+        public float BB_PLAYER_SPEED_MODIFIER = 0;
         public float BB_PLAYER_HEALTH_MODIFIER = 0;
         public float BB_PLAYER_SCORE_MODIFIER = 0;
         public float BB_PLAYER_SHIELD_DURATION = 0;
@@ -100,6 +103,7 @@ namespace TikiBeeGame {
             //Get the values from info and assign them to the appropriate properties
             PLAYER_CURRENCY = (int)info.GetValue("PLAYER_CURRENCY", typeof(int));
             TB_PLAYER_HEALTH_MODIFIER = (float)info.GetValue("TB_PLAYER_HEALTH_MODIFIER", typeof(float));
+            TB_PLAYER_SPEED_MODIFIER = (float)info.GetValue("TB_PLAYER_SPEED_MODIFIER", typeof(float));
             TB_PLAYER_SCORE_MODIFIER = (float)info.GetValue("TB_PLAYER_SCORE_MODIFIER", typeof(float));
             TB_PLAYER_SHIELD_DURATION = (float)info.GetValue("TB_PLAYER_SHIELD_DURATION", typeof(float));
             TB_PLAYER_SHIELD_COOLDOWN = (float)info.GetValue("TB_PLAYER_SHIELD_COOLDOWN", typeof(float));
@@ -108,8 +112,9 @@ namespace TikiBeeGame {
             TB_PLAYER_SPEED_BOOST_MULTIPLIER = (float)info.GetValue("TB_PLAYER_SPEED_BOOST_MULTIPLIER", typeof(float));
             TB_PLAYER_BURST_COOLDOWN = (float)info.GetValue("TB_PLAYER_BURST_COOLDOWN", typeof(float));
             TB_PLAYER_BURST_RADIUS = (float)info.GetValue("TB_PLAYER_BURST_RADIUS", typeof(float));
-            TB_PLAYER_BURST_DAMAGE = (float)info.GetValue("TB_PLAYER_BURST_DAMAGE", typeof(float));
+            BB_PLAYER_BURST_DAMAGE = (float)info.GetValue("BB_PLAYER_BURST_DAMAGE", typeof(float));
             BB_PLAYER_HEALTH_MODIFIER = (float)info.GetValue("BB_PLAYER_HEALTH_MODIFIER", typeof(float));
+            TB_PLAYER_SPEED_MODIFIER = (float)info.GetValue("TB_PLAYER_SPEED_MODIFIER", typeof(float));
             BB_PLAYER_SCORE_MODIFIER = (float)info.GetValue("BB_PLAYER_SCORE_MODIFIER", typeof(float));
             BB_PLAYER_SHIELD_DURATION = (float)info.GetValue("BB_PLAYER_SHIELD_DURATION", typeof(float));
             BB_PLAYER_SHIELD_COOLDOWN = (float)info.GetValue("BB_PLAYER_SHIELD_COOLDOWN", typeof(float));
@@ -125,6 +130,7 @@ namespace TikiBeeGame {
         public void GetObjectData(SerializationInfo info, StreamingContext ctxt) {
             info.AddValue("PLAYER_CURRENCY", (PLAYER_CURRENCY));
             info.AddValue("TB_PLAYER_HEALTH_MODIFIER", (TB_PLAYER_HEALTH_MODIFIER));
+            info.AddValue("TB_PLAYER_SPEED_MODIFIER", (TB_PLAYER_SPEED_MODIFIER));
             info.AddValue("TB_PLAYER_SCORE_MODIFIER", (TB_PLAYER_SCORE_MODIFIER));
             info.AddValue("TB_PLAYER_SHIELD_DURATION", (TB_PLAYER_SHIELD_DURATION));
             info.AddValue("TB_PLAYER_SHIELD_COOLDOWN", (TB_PLAYER_SHIELD_COOLDOWN));
@@ -135,6 +141,7 @@ namespace TikiBeeGame {
             info.AddValue("TB_PLAYER_BURST_RADIUS", (TB_PLAYER_BURST_RADIUS));
             info.AddValue("TB_PLAYER_BURST_DAMAGE", (TB_PLAYER_BURST_DAMAGE));
             info.AddValue("BB_PLAYER_HEALTH_MODIFIER", (BB_PLAYER_HEALTH_MODIFIER));
+            info.AddValue("BB_PLAYER_SPEED_MODIFIER", (BB_PLAYER_SPEED_MODIFIER));
             info.AddValue("BB_PLAYER_SCORE_MODIFIER", (BB_PLAYER_SCORE_MODIFIER));
             info.AddValue("BB_PLAYER_SHIELD_DURATION", (BB_PLAYER_SHIELD_DURATION));
             info.AddValue("BB_PLAYER_SHIELD_COOLDOWN", (BB_PLAYER_SHIELD_COOLDOWN));
