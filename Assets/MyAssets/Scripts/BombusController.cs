@@ -24,7 +24,7 @@ namespace TikiBeeGame {
             SaveObject so = PersistantData.Load();
 
             //add defaults
-            this.CURRENCY = so.PLAYER_CURRENCY;
+            //this.CURRENCY = so.PLAYER_CURRENCY;
             this.MOVE_SPEED = so.BB_PLAYER_SPEED_MODIFIER + 3;
             this.MOVE_SPEED_DEFAULT = so.BB_PLAYER_SPEED_MODIFIER + 3 ;
             this.HEALTH_MULTIPLIER = so.BB_PLAYER_HEALTH_MODIFIER + 1;
@@ -36,7 +36,7 @@ namespace TikiBeeGame {
             this.SPEED_BOOST_MULTIPLIER = so.BB_PLAYER_SPEED_BOOST_MULTIPLIER+1;
             this.BURST_DAMAGE = so.BB_PLAYER_BURST_DAMAGE+1;
             this.BURST_COOLDOWN = 10-so.BB_PLAYER_BURST_COOLDOWN;
-            this.BURST_RADIUS = so.BB_PLAYER_BURST_RADIUS+2;
+            this.BURST_RADIUS = so.BB_PLAYER_BURST_RADIUS+1;
         }
     }
 }

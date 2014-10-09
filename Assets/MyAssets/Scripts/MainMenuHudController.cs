@@ -44,7 +44,8 @@ namespace TikiBeeGame {
             }
             if (GUI.Button(new Rect(300, bottonBottom += 70, 270, 60), "Settings", menuButtonStyle)) {
                 LevelController.loadSettings();
-			}
+            }
+            GUI.Label(new Rect(300, 970, 300, 100), "Version: " + PreferencesManager.GAME_VERSION, versionLabelStyle);
 
             if (GUI.Button(new Rect(1800, 970, 90, 90), "", secretButtonStyle)) {
                 if (secretPressed >= 8) {
@@ -56,7 +57,6 @@ namespace TikiBeeGame {
                     secretPressed += 1;
                 }
             }
-            GUI.Label(new Rect(25, 970, 300, 100), "Version: " + PreferencesManager.GAME_VERSION, versionLabelStyle);
 
         }
         public void animationFinished(){

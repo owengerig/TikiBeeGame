@@ -19,33 +19,7 @@ Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Proje
 Loading C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.062 seconds
+- Completed reload, in  0.067 seconds
 desktop: 1920x1200 60Hz; virtual: 1920x1200 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.635530 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 203.
-Total: 1.454614 ms (FindLiveObjects: 0.016973 ms CreateObjectMapping: 0.017368 ms MarkObjects: 0.177237 ms  DeleteObjects: 0.131053 ms)
-
-UnloadTime: 0.483555 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 223.
-Total: 1.337376 ms (FindLiveObjects: 0.017763 ms CreateObjectMapping: 0.018158 ms MarkObjects: 0.195790 ms  DeleteObjects: 0.018947 ms)
-
-UnloadTime: 0.551055 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 203.
-Total: 1.434482 ms (FindLiveObjects: 0.016973 ms CreateObjectMapping: 0.017763 ms MarkObjects: 0.178422 ms  DeleteObjects: 0.131448 ms)
-
-UnloadTime: 0.213553 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 225.
-Total: 0.548292 ms (FindLiveObjects: 0.007500 ms CreateObjectMapping: 0.007105 ms MarkObjects: 0.094342 ms  DeleteObjects: 0.007894 ms)
-

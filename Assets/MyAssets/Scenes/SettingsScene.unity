@@ -178,10 +178,6 @@ MonoBehaviour:
     y: 30
     width: 180
     height: 20
-  levelFadeInTime: 1
-  levelFadeOutTime: 1
-  secretLeveFadeInTime: .5
-  secretLeveFadeOutTime: .5
   movementToggleStyle:
     m_Name: 
     m_Normal:

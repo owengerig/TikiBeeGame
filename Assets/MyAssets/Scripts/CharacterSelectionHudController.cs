@@ -31,7 +31,7 @@ namespace TikiBeeGame {
             GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(rx, ry, 1));
             /////////////////////////////////////////////////////////////////////
 
-            if (GUI.Button(new Rect(100, 20, 230, 60), "Main Menu", menuButtonStyle)) {
+            if (GUI.Button(new Rect(300, 20, 230, 60), "Back", menuButtonStyle)) {
                 LevelController.loadMainMenuScene();
             }
             if (GUI.Button(new Rect(35, 120, 880, 950), "", invisibleButtonStyle)) {

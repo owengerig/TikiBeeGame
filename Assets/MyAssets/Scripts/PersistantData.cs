@@ -34,9 +34,18 @@ namespace TikiBeeGame {
             return data;
         }
 
+        public static void checkForUpdates() {
+            SaveObject data = new SaveObject();
+            data = Load();
+
+            if (!data.GAME_VERSION.Equals(PreferencesManager.GAME_VERSION)) {
+                SaveDefaults();
+            }
+        }
         public static void SaveDefaults() {
 			SaveObject so = new SaveObject ();
 
+            so.GAME_VERSION = PreferencesManager.GAME_VERSION;
             so.PLAYER_CURRENCY = 10;
             so.TB_PLAYER_SPEED_MODIFIER = 0;
             so.TB_PLAYER_HEALTH_MODIFIER = 0;
@@ -73,6 +82,7 @@ namespace TikiBeeGame {
     [Serializable()]
     class SaveObject : ISerializable {
         public int PLAYER_CURRENCY = 0;
+        public string GAME_VERSION = PreferencesManager.GAME_VERSION;
         public float TB_PLAYER_SPEED_MODIFIER = 0;
         public float TB_PLAYER_HEALTH_MODIFIER = 0;
         public float TB_PLAYER_SCORE_MODIFIER = 0;
@@ -102,6 +112,7 @@ namespace TikiBeeGame {
         protected SaveObject(SerializationInfo info, StreamingContext ctxt) {
             //Get the values from info and assign them to the appropriate properties
             PLAYER_CURRENCY = (int)info.GetValue("PLAYER_CURRENCY", typeof(int));
+            GAME_VERSION = (string)info.GetValue("GAME_VERSION", typeof(string));
             TB_PLAYER_HEALTH_MODIFIER = (float)info.GetValue("TB_PLAYER_HEALTH_MODIFIER", typeof(float));
             TB_PLAYER_SPEED_MODIFIER = (float)info.GetValue("TB_PLAYER_SPEED_MODIFIER", typeof(float));
             TB_PLAYER_SCORE_MODIFIER = (float)info.GetValue("TB_PLAYER_SCORE_MODIFIER", typeof(float));
@@ -129,6 +140,7 @@ namespace TikiBeeGame {
         //Serialization function.
         public void GetObjectData(SerializationInfo info, StreamingContext ctxt) {
             info.AddValue("PLAYER_CURRENCY", (PLAYER_CURRENCY));
+            info.AddValue("GAME_VERSION", (GAME_VERSION));
             info.AddValue("TB_PLAYER_HEALTH_MODIFIER", (TB_PLAYER_HEALTH_MODIFIER));
             info.AddValue("TB_PLAYER_SPEED_MODIFIER", (TB_PLAYER_SPEED_MODIFIER));
             info.AddValue("TB_PLAYER_SCORE_MODIFIER", (TB_PLAYER_SCORE_MODIFIER));

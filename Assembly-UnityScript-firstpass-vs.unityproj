@@ -81,6 +81,7 @@
      <None Include="Assets\Image Effects\_Sources\Shaders\ConvertDepth.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Sprite Pack #1 - Tap and Fly\!Readme.txt" />
      <None Include="Assets\Image Effects\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />

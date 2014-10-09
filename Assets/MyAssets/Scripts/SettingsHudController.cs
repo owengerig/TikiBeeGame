@@ -31,21 +31,21 @@ namespace TikiBeeGame {
             GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(rx, ry, 1));
             /////////////////////////////////////////////////////////////////////
 
-            if (GUI.Button(new Rect(700, 20, 230, 60), "Main Menu", menuButtonStyle)) {
+            if (GUI.Button(new Rect(800, 40, 230, 60), "Main Menu", menuButtonStyle)) {
                 LevelController.loadMainMenuScene();
             }
             //if (GUI.Button(new Rect(300, 90, 230, 60), "Save", menuButtonStyle)) {
             //    this.loadMainMenuScene();
             //}
-            if (GUI.Button(new Rect(700, 190, 400, 60), "Clear Saved Data", menuButtonStyle)) {
+            if (GUI.Button(new Rect(800, 100, 400, 60), "Clear Saved Data", menuButtonStyle)) {
                 PersistantData.Delete();
                 LevelController.loadMainMenuScene();
             }
 
             if (PreferencesManager.IS_WALKING) {
-                PreferencesManager.IS_WALKING = GUI.Toggle(new Rect(700, 300, 500, 60), PreferencesManager.IS_WALKING, "Default: Walking", movementToggleStyle);
+                PreferencesManager.IS_WALKING = GUI.Toggle(new Rect(800, 160, 500, 60), PreferencesManager.IS_WALKING, "Default: Walking", movementToggleStyle);
             } else {
-                PreferencesManager.IS_WALKING = GUI.Toggle(new Rect(700, 300, 500, 60), PreferencesManager.IS_WALKING, "Default: Flying", movementToggleStyle);
+                PreferencesManager.IS_WALKING = GUI.Toggle(new Rect(800, 160, 500, 60), PreferencesManager.IS_WALKING, "Default: Flying", movementToggleStyle);
             }
         }
     }

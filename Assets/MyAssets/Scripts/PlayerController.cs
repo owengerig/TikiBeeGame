@@ -222,11 +222,11 @@ namespace TikiBeeGame {
             runParticle(healthParticleSystem);
 
             //adjust health
+            this.HEALTH += health;
+            
             if ((this.HEALTH + health) > (100 * this.HEALTH_MULTIPLIER)) {
                 this.HEALTH = Mathf.RoundToInt(100 * this.HEALTH_MULTIPLIER);
-            } else {
-                this.HEALTH += health;
-            }
+            } 
 
             return this.HEALTH;
         }
@@ -259,7 +259,7 @@ namespace TikiBeeGame {
             runEmitter(boostParticleEmitter);
             runParticle(boostParticleSystem);
 
-            this.MOVE_SPEED *= SPEED_BOOST_MULTIPLIER;
+            this.MOVE_SPEED += SPEED_BOOST_MULTIPLIER;
             Invoke("resetSpeed", SPEED_BOOST_DURATION);
         }
 
@@ -298,6 +298,7 @@ namespace TikiBeeGame {
         virtual public void saveCurrencyToPersistantStore() {
             SaveObject so = PersistantData.Load();
             so.PLAYER_CURRENCY = this.CURRENCY + so.PLAYER_CURRENCY;
+            this.CURRENCY = 0;
             PersistantData.Save(so);
         }
     }

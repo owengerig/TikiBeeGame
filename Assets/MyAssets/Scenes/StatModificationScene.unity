@@ -446,4 +446,4 @@ MonoBehaviour:
   backgroundBB: {fileID: 21300000, guid: f6dcc0b58cff74e41907ff5d19c84ba4, type: 3}
   backgroundDefault: {fileID: 21300000, guid: d9d2f9e99083dd948a20fe06d6b5dd5d, type: 3}
   emptyBar: {fileID: 2800000, guid: ca7e55af11ce3e140b3f4a661f0a5323, type: 3}
-  fullBarYellow: {fileID: 2800000, guid: ad256a9853db02c47b20310bf240f57b, type: 3}
+  fullBar: {fileID: 2800000, guid: ea77e65b933f8f241a029577f1b740c6, type: 3}
