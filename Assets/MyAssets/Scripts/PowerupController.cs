@@ -9,56 +9,71 @@
 //------------------------------------------------------------------------------
 using UnityEngine;
 
-namespace TikiBeeGame
-{
-	public class PowerupController : MonoBehaviour
-		{
+namespace TikiBeeGame {
+    public class PowerupController : MonoBehaviour {
 
-			public int HEALTHBONUS = 0;
-            public int SCOREBONUS = 0;
-            public int CURRENCYBONUS = 0;
+        public int HEALTHBONUS = 0;
+        public int SCOREBONUS = 0;
+        public int CURRENCYBONUS = 0;
 
-			public PowerupController () {
-			}
+        public PowerupController() {
+        }
 
-            public virtual void spawn() {
+        public virtual void spawn() {
 
-                if (!this.gameObject.activeSelf) {
-                    this.gameObject.SetActive(true);
-                }
-
-                transform.position = SpawnPoint.getSpawnPointAtRandomInsideBoundsExcludeHud();
+            if (!this.gameObject.activeSelf) {
+                this.gameObject.SetActive(true);
             }
 
-            public virtual void OnBecameInvisible() {
-                if (this.gameObject != null) {
-                    DestroyMe();
-                }
-            }
-            virtual public void OnTriggerEnter2D(Collider2D other) {
-                Logger.logPowerup(other.tag + " hit OnTriggerEnter2D on " + this.tag);
+            transform.position = SpawnPoint.getSpawnPointAtRandomInsideBoundsExcludeHud();
+        }
 
-                if (other.CompareTag("Player")) {
-                    PreferencesManager.getPlayerController().gainScore(SCOREBONUS);
-                    PreferencesManager.getPlayerController().gainHealth(HEALTHBONUS);
-                    PreferencesManager.getPlayerController().gainCurrency(CURRENCYBONUS);
+        public virtual void OnBecameInvisible() {
+            DestroyMe();
+        }
+        virtual public void OnTriggerEnter2D(Collider2D other) {
+            Logger.logPowerup(other.tag + " hit OnTriggerEnter2D on " + this.tag);
 
-                    GetComponent<Animator>().SetTrigger("shouldDissappear");
-                }
-            }
-            virtual public void OnTriggerStay2D(Collider2D other) {
-                Logger.logPowerup(other.tag + " hit OnTriggerStay2D on " + this.tag);
-            }
-            virtual public void OnTriggerExit2D(Collider2D other) {
-                Logger.logPowerup(other.tag + " hit OnTriggerExit2D on " + this.tag);
-            }
-            virtual public void DestroyMe() {
-                Logger.logPowerup("Destoring char " + this.tag);
+            if (other.CompareTag("Player")) {
+                PreferencesManager.getPlayerController().gainScore(SCOREBONUS);
+                PreferencesManager.getPlayerController().gainHealth(HEALTHBONUS);
+                PreferencesManager.getPlayerController().gainCurrency(CURRENCYBONUS);
 
-                if (this.gameObject != null) {
-                    Destroy(this.gameObject);
-                }
+				GetComponent<Animator>().SetTrigger("shouldDissappear");
             }
-		}
+        }
+        virtual public void OnTriggerStay2D(Collider2D other) {
+            Logger.logPowerup(other.tag + " hit OnTriggerStay2D on " + this.tag);
+        }
+        virtual public void OnTriggerExit2D(Collider2D other) {
+            //if (other.CompareTag("Player")) {
+            //    DestroyMe();
+            //}
+        }
+        virtual public void DestroyMe() {
+            Logger.logPowerup("Destoring char " + this.tag);
+
+            if (GetType() == typeof(HeartController)) {
+                if (PreferencesManager.HEARTS_SPAWNED - 1 >= 0)
+                    PreferencesManager.HEARTS_SPAWNED--;
+            }
+            if (GetType() == typeof(StarController)) {
+                if (PreferencesManager.STARS_SPAWNED - 1 >= 0)
+                    PreferencesManager.STARS_SPAWNED--;
+            }
+            if (GetType() == typeof(SpeedBoostController)) {
+                if (PreferencesManager.SPEED_BOOST_SPAWNED - 1 >= 0)
+                    PreferencesManager.SPEED_BOOST_SPAWNED--;
+            }
+            if (GetType() == typeof(PortalController)) {
+                if (PreferencesManager.PORTALS_SPAWNED - 1 >= 0)
+                    PreferencesManager.PORTALS_SPAWNED--;
+            }
+
+            if (this.gameObject != null) {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
 

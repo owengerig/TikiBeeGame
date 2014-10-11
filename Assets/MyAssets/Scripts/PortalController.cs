@@ -15,15 +15,6 @@ namespace TikiBeeGame {
         }
 
         override public void DestroyMe() {
-            GameObject go = GameObject.FindGameObjectWithTag("GameController");
-            GameController gc = null;
-            if (go != null) {
-                gc = go.GetComponent<GameController>();
-            }
-            if (gc != null) {
-                gc.numberOfPortalsSpawned--;
-            }
-
             base.DestroyMe();
         }
 

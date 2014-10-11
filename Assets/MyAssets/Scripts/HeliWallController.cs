@@ -18,14 +18,7 @@ namespace TikiBeeGame{
         }
 
         public override void DestroyMe() {
-            GameObject go = GameObject.FindGameObjectWithTag("GameController");
-            GameController gc = null;
-            if (go != null) {
-                gc = go.GetComponent<GameController>();
-            }
-            if (gc != null) {
-                gc.numberOfHeliWallsSpawned--;
-            }
+            PreferencesManager.HELI_WALLS_SPAWNED--;
             if (this.gameObject != null) {
                 base.DestroyMe();
             }

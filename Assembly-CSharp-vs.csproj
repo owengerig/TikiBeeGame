@@ -98,6 +98,8 @@
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BackgroundController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BaseCharacterController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\BombController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\BombSpawnerController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BombusController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\CharacterSelectionHudController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\CreditsController.cs" />

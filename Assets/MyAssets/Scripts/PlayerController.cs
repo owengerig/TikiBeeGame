@@ -40,7 +40,6 @@ namespace TikiBeeGame {
         public Transform GROUND_TRANSFORM;
         public float GROUND_RADIUS = 0.2f;
         public LayerMask GROUND_LAYER_MASK;
-        public float JUMP_FORCE = 700f;
         public bool JUMPED = false;  //used for double jump
 
         //Particle systems
@@ -178,7 +177,7 @@ namespace TikiBeeGame {
         virtual public void jump() {
 
             if (IS_GROUNDED || !JUMPED) {
-                rigidbody2D.AddForce(new Vector2(0, JUMP_FORCE));
+                rigidbody2D.AddForce(new Vector2(0, 650));
 
                 if (!JUMPED && !IS_GROUNDED) {
                     JUMPED = true;
@@ -186,7 +185,7 @@ namespace TikiBeeGame {
             }
         }
         virtual public void knockBack() {
-            rigidbody2D.AddForce(new Vector2(-JUMP_FORCE * 5, 0));
+            rigidbody2D.AddForce(new Vector2(-(650) * 5, 0));
         }
 
         private void flip() {

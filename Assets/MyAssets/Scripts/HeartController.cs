@@ -12,17 +12,5 @@ namespace TikiBeeGame{
 		// Update is called once per frame
 		void Update () {
 		}
-        override public void DestroyMe() {
-            GameObject go = GameObject.FindGameObjectWithTag("GameController");
-            GameController gc = null;
-            if (go != null) {
-                gc = go.GetComponent<GameController>();
-            }
-            if (gc != null) {
-                gc.numberOfHeartsSpawned--;
-            }
-
-            base.DestroyMe();
-        }
 	}
 }

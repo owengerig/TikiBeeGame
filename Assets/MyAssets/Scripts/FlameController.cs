@@ -37,6 +37,7 @@ namespace TikiBeeGame{
                     flameParticleSystem.startLifetime = flameAndColliderSize;
                     Vector2 colliderSize = new Vector2(1,flameAndColliderSize *  5);
                     boxCollider.size = colliderSize;
+                   // boxCollider.po
                     boxCollider.enabled = true;
                 } else {
                     flameParticleSystem.startLifetime = 0f;

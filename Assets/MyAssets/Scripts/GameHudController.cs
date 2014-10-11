@@ -27,9 +27,6 @@ namespace TikiBeeGame
         public Texture2D walkHudIcon;
         public Texture2D flyHudIcon;
 
-        //win screen
-        public ParticleEmitter fireworkParticleSystem;
-        private List<ParticleEmitter> instantiatedFireworkParticleSystem = new List<ParticleEmitter>();
 
 		//cooldown indicators
 		private float shieldHudLastPressed =0;
@@ -103,23 +100,7 @@ namespace TikiBeeGame
 
             #region end game menu
             if (PreferencesManager.END_GAME) {
-                //no longer need this since we removed score requirements
-                //if (score > PreferencesManager.CURRENT_SCORE_REQUIREMENT) {
-                //    if (GUI.Button(new Rect(75, 175, 140, 40), "Continue", menuButtonStyle)) {
-                //        PreferencesManager.END_GAME = false;
-                //        LevelController.loadNextLevelWithLevelMap();
-                //    }
-                //    runEmitter(fireworkParticleSystem);
-                //    if (instantiatedFireworkParticleSystem.Count < UnityEngine.Random.Range(0f, 2f)) {
-                //        ParticleEmitter pe = Instantiate(fireworkParticleSystem) as ParticleEmitter;
-                //        pe.transform.position = new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 1f);
-                //        instantiatedFireworkParticleSystem.Add(pe);
-                //    }
-                //    Invoke("moveFireworks", 2);
-                //    Invoke("stopFireworks", 10);
-                //} else {
                    GUI.Label(new Rect(25, 75, 500, 500), "DEATH!!!!  Total Score: " + score, endGameLabelStyle);
-                //}
                 //restart button
                 if (GUI.Button(new Rect(1920 - buttonWidth, 0, buttonWidth, maxHeight), restartHudIcon)) {
                     Time.timeScale = 1.0f;
@@ -268,16 +249,6 @@ namespace TikiBeeGame
                 return true;
             } else{
                 return false;
-            }
-        }
-        public void moveFireworks() {
-            foreach (ParticleEmitter pe in instantiatedFireworkParticleSystem) {
-                pe.transform.position = SpawnPoint.getSpawnPointAtRandomInsideBoundsExcludeHud();
-            }
-        }
-        public void stopFireworks() {
-            foreach (ParticleEmitter pe in instantiatedFireworkParticleSystem) {
-                pe.emit = false;
             }
         }
 	}

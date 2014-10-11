@@ -6,15 +6,10 @@ namespace TikiBeeGame {
 
         void Start() {
             numberOfHeliWallsAllowed = 0;
-            numberOfHeliWallsSpawned = 0;
             numberOfHeartsAllowed = 0;
-            numberOfHeartsSpawned = 0;
             numberOfSpeedBoostsAllowed = 0;
-            numberOfSpeedBoostsSpawned = 0;
             numberOfStarsAllowed = 0;
-            numberOfStarsSpawned = 0;
             numberOfPortalsAllowed = 0;
-            numberOfPortalsSpawned = 0;
 
             spawnPlayers();
         }

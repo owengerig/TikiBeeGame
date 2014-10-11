@@ -12,15 +12,10 @@ namespace TikiBeeGame{
         public GameObject portal = null;
 
         public int numberOfHeliWallsAllowed = 0;
-        public int numberOfHeliWallsSpawned = 0;
         public int numberOfHeartsAllowed = 0;
-        public int numberOfHeartsSpawned = 0;
         public int numberOfSpeedBoostsAllowed = 0;
-        public int numberOfSpeedBoostsSpawned = 0;
         public int numberOfStarsAllowed = 0;
-        public int numberOfStarsSpawned = 0;
         public int numberOfPortalsAllowed = 0;
-        public int numberOfPortalsSpawned = 0;
 
 
         public GameObject tikibee = null;
@@ -57,32 +52,32 @@ namespace TikiBeeGame{
 
         virtual public void Update() {
             if (!PreferencesManager.END_GAME) {
-                if (numberOfHeliWallsSpawned < numberOfHeliWallsAllowed) {
+                if (PreferencesManager.HELI_WALLS_SPAWNED < numberOfHeliWallsAllowed) {
                     GameObject heliWallGO = Instantiate(heliWallEnemy) as GameObject;
                     heliWallGO.GetComponent<HeliWallController>().spawn();
-                    numberOfHeliWallsSpawned++;
+                    PreferencesManager.HELI_WALLS_SPAWNED++;
                 }
-                if (numberOfHeartsSpawned < numberOfHeartsAllowed) {
+                if (PreferencesManager.HEARTS_SPAWNED < numberOfHeartsAllowed) {
+                    PreferencesManager.HEARTS_SPAWNED++;
                     GameObject heartGO = Instantiate(heart) as GameObject;
                     heartGO.GetComponent<HeartController>().spawn();
-                    numberOfHeartsSpawned++;
                 }
-                if (numberOfSpeedBoostsSpawned < numberOfSpeedBoostsAllowed) {
+                if (PreferencesManager.SPEED_BOOST_SPAWNED < numberOfSpeedBoostsAllowed) {
+                    PreferencesManager.SPEED_BOOST_SPAWNED++;
                     GameObject speedBoostGO = Instantiate(speedboost) as GameObject;
                     speedBoostGO.GetComponent<SpeedBoostController>().spawn();
-                    numberOfSpeedBoostsSpawned++;
                 }
-                if (numberOfStarsSpawned < numberOfStarsAllowed) {
+                if (PreferencesManager.STARS_SPAWNED < numberOfStarsAllowed) {
+                    PreferencesManager.STARS_SPAWNED++;
                     GameObject starGO = Instantiate(star) as GameObject;
                     starGO.GetComponent<StarController>().spawn();
-                    numberOfStarsSpawned++;
                 }
 
                 if (Random.value <= 0.0001) {
-                    if (numberOfPortalsSpawned < numberOfPortalsAllowed) {
+                    if (PreferencesManager.PORTALS_SPAWNED < numberOfPortalsAllowed) {
+                        PreferencesManager.PORTALS_SPAWNED++;
                         GameObject portalGO = Instantiate(portal) as GameObject;
                         portalGO.GetComponent<PortalController>().spawn();
-                        numberOfPortalsSpawned++;
                     }
                 }
             }

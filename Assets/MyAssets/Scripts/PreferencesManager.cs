@@ -7,7 +7,7 @@ using UnityEngine;
 namespace TikiBeeGame {
     static class PreferencesManager {
 
-        static public string GAME_VERSION = "0.0.1.395";
+        static public string GAME_VERSION = "0.0.1.475";
 
         static public bool END_GAME = false;  //used for signalling to the game controller to stop spawning because of endgame
         static public bool TIKIBEE_SELECTED = false;
@@ -18,6 +18,13 @@ namespace TikiBeeGame {
         static public int DESTINATION_LEVEL_SCORE_REQUIREMENT = 0;  //used when returning from secret levels
         static public GameObject CURRENT_PLAYER = null;
 
+
+        public static int HELI_WALLS_SPAWNED = 0;
+        public static int HEARTS_SPAWNED = 0;
+        public static int SPEED_BOOST_SPAWNED = 0;
+        public static int STARS_SPAWNED = 0;
+        public static int PORTALS_SPAWNED = 0;
+
         public static void setDefaults() {
             END_GAME = false;
             TIKIBEE_SELECTED = false;
@@ -27,6 +34,12 @@ namespace TikiBeeGame {
             SOURCE_LEVEL_INDEX = 0;
             DESTINATION_LEVEL_SCORE_REQUIREMENT = 0; 
             CURRENT_PLAYER = null;
+
+            HELI_WALLS_SPAWNED = 0;
+            HEARTS_SPAWNED = 0;
+            SPEED_BOOST_SPAWNED = 0;
+            STARS_SPAWNED = 0;
+            PORTALS_SPAWNED = 0;
         }
         public static PlayerController getPlayerController() {
             if (CURRENT_PLAYER == null) { return null; }

@@ -29,19 +29,31 @@ namespace TikiBeeGame {
                     destination = new Vector3(leftWall, destination.y, destination.z);
                 }
 
-                test = endMarker.position.x-10f ;
+                test = endMarker.position.x - 10f;
                 if (destination.x > test) {
                     destination = new Vector3(test, destination.y, destination.z);
-                } 
+                }
                 if (destination.y < bottomWall) {
                     destination = new Vector3(destination.x, bottomWall, destination.z);
                 }
                 if (destination.y > topWall) {
                     destination = new Vector3(destination.x, topWall, destination.z);
                 }
-                //OVERRIDE FOR TEST FOR Y (TOP WALL)
-                //destination = new Vector3(destination.x, 0, destination.z);
 
+                //if (destination.x < leftWall) {
+                //    destination = new Vector3(leftWall, destination.y, destination.z);
+                //}
+
+                //test = endMarker.position.x-10f ;
+                //if (destination.x > test) {
+                //    destination = new Vector3(test, destination.y, destination.z);
+                //} 
+                //if (destination.y < bottomWall) {
+                //    destination = new Vector3(destination.x, bottomWall, destination.z);
+                //}
+                //if (destination.y > topWall) {
+                //    destination = new Vector3(destination.x, topWall, destination.z);
+                //}
 
                 transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
             } else {

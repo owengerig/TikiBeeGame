@@ -52,18 +52,15 @@ namespace TikiBeeGame {
         }
 
         void OnBecameInvisible() {
-            GameObject go = GameObject.FindGameObjectWithTag("GameController");
-            GameController gc = null;
-            if (go != null) {
-                gc = go.GetComponent<GameController>();
-            }
-            if (gc != null) {
-                gc.numberOfHeliWallsSpawned--;
-            }
+            //GameObject go = GameObject.FindGameObjectWithTag("GameController");
+            //GameController gc = null;
+            //if (go != null) {
+            //    gc = go.GetComponent<GameController>();
+            //}
 
-            if (this.gameObject != null) {
-                base.DestroyMe();
-            }
+            //if (this.gameObject != null) {
+            //    base.DestroyMe();
+            //}
         }
 
         override public void spawn() {

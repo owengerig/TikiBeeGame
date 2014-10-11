@@ -1,17 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace TikiBeeGame {
     public class CreditsHudController : HudController {
 
         public GUIStyle totalScoreLabelStyle;
+        public ParticleEmitter fireworkParticleSystem;
+        private List<ParticleEmitter> instantiatedFireworkParticleSystem = new List<ParticleEmitter>();
 
         void Start() {
         }
 
         // Update is called once per frame
         void Update() {
-
+            runEmitter(fireworkParticleSystem);
+            if (instantiatedFireworkParticleSystem.Count < UnityEngine.Random.Range(0f, 2f)) {
+                ParticleEmitter pe = Instantiate(fireworkParticleSystem) as ParticleEmitter;
+                pe.transform.position = new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 1f);
+                instantiatedFireworkParticleSystem.Add(pe);
+            }
+            Invoke("moveFireworks", 2);
+            Invoke("stopFireworks", 20);
         }
 
         void OnGUI() {
@@ -39,6 +49,17 @@ namespace TikiBeeGame {
             }
             GUI.Label(new Rect(1200, bottonBottom, 300, 100), "Total Score: " + score, totalScoreLabelStyle);
 
+        }
+
+        public void moveFireworks() {
+            foreach (ParticleEmitter pe in instantiatedFireworkParticleSystem) {
+                pe.transform.position = SpawnPoint.getSpawnPointAtRandomInsideBoundsExcludeHud();
+            }
+        }
+        public void stopFireworks() {
+            foreach (ParticleEmitter pe in instantiatedFireworkParticleSystem) {
+                pe.emit = false;
+            }
         }
     }
 }

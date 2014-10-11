@@ -12,7 +12,7 @@ namespace TikiBeeGame{
         }
 
         void Update() {
-            exitDoor.position = Camera.main.ViewportToWorldPoint(new Vector3(.85f, .25f, 1));
+            //exitDoor.position = Camera.main.ViewportToWorldPoint(new Vector3(.85f, .25f, 1));
         }
     }
 }
