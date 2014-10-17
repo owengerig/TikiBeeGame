@@ -63,6 +63,14 @@ namespace TikiBeeGame {
                 rigidbody2D.isKinematic = false;
                 rigidbody2D.fixedAngle = false;
             }
+
+            stopParticleSystem(scoreParticleSystem);
+            stopParticleSystem(healthParticleSystem);
+            stopParticleEmitter(boostParticleEmitter);
+            stopParticleSystem(boostParticleSystem);
+            stopParticleSystem(deathParticleSystem);
+            stopParticleSystem(shieldParticleSystem);
+            stopParticleSystem(burstParticleSystem);
         }
         public virtual void OnBecameInvisible() {
             //loseLevel();
@@ -218,7 +226,7 @@ namespace TikiBeeGame {
         }
 
         override public int gainHealth(int health) {
-            runParticle(healthParticleSystem);
+            runParticleSystem(healthParticleSystem);
 
             //adjust health
             this.HEALTH += health;
@@ -231,7 +239,7 @@ namespace TikiBeeGame {
         }
 
         virtual public void gainScore(int score) {
-            runParticle(scoreParticleSystem);
+            runParticleSystem(scoreParticleSystem);
 
             //adjust score
             this.SCORE += Mathf.RoundToInt(score * this.SCORE_MODIFIER);
@@ -242,7 +250,7 @@ namespace TikiBeeGame {
         }
 
         virtual public void activateBurst() {
-            runParticle(burstParticleSystem);
+            runParticleSystem(burstParticleSystem);
 
             Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), BURST_RADIUS);
             Logger.logPlayer("burst: radius: " + BURST_RADIUS + " | position: " + transform.position + " | objects in range " + objectsInRange.GetLength(0));
@@ -255,8 +263,8 @@ namespace TikiBeeGame {
         }
 
         virtual public void speedBoost() {
-            runEmitter(boostParticleEmitter);
-            runParticle(boostParticleSystem);
+            runParticleEmitter(boostParticleEmitter);
+            runParticleSystem(boostParticleSystem);
 
             this.MOVE_SPEED += SPEED_BOOST_MULTIPLIER;
             Invoke("resetSpeed", SPEED_BOOST_DURATION);
@@ -268,32 +276,20 @@ namespace TikiBeeGame {
         }
 
         virtual public void activateShield() {
-            runParticle(shieldParticleSystem);
+            runParticleSystem(shieldParticleSystem);
             this.SHIELD_ACTIVE = true;
             Invoke("deactivateShield", SHIELD_DURATION);
         }
         virtual public void deactivateShield() {
             this.SHIELD_ACTIVE = false;
-            shieldParticleSystem.Stop();
+            stopParticleSystem(shieldParticleSystem);
         }
         virtual public void loseLevel() {
             GetComponent<Animator>().SetTrigger("DeathTrigger");
-            runParticle(deathParticleSystem);
+            runParticleSystem(deathParticleSystem);
             PreferencesManager.END_GAME = true;
         }
 
-        virtual public void runParticle(ParticleSystem ps) {
-            ps.transform.position = transform.position;
-            ps.renderer.sortingLayerName = "Particles";
-            ps.renderer.sortingOrder = 0;
-            ps.Play();
-        }
-        virtual public void runEmitter(ParticleEmitter pe) {
-            pe.transform.position = transform.position;
-            pe.renderer.sortingLayerName = "Particles";
-            pe.renderer.sortingOrder = 0;
-            pe.emit = true;
-        }
         virtual public void saveCurrencyToPersistantStore() {
             SaveObject so = PersistantData.Load();
             so.PLAYER_CURRENCY = this.CURRENCY + so.PLAYER_CURRENCY;

@@ -54,6 +54,10 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Camera
+    userID: 7
+    uniqueID: 780269757
+    locked: 0
   - name: Background
     userID: 1
     uniqueID: 3732975695

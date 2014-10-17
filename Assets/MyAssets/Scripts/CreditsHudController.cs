@@ -48,6 +48,7 @@ namespace TikiBeeGame {
                 score = PreferencesManager.getPlayerController().SCORE;
             }
             GUI.Label(new Rect(1200, bottonBottom, 300, 100), "Total Score: " + score, totalScoreLabelStyle);
+            GUI.Label(new Rect(1200, bottonBottom+100, 300, 100), "High Score: " + PreferencesManager.getPlayerHighScoreAndUpdate(), totalScoreLabelStyle);
 
         }
 

@@ -53,6 +53,9 @@ namespace TikiBeeGame {
                 Debug.Log(error);
             }
         }
+        public static void logTest(string error) {
+            Debug.Log(error);
+        }
     }
 }
 

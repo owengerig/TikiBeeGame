@@ -96,6 +96,13 @@
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\ChaseCamera.cs" />
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\CoinPickup.cs" />
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Moba_Camera\Scripts\Moba_Camera.cs" />
+     <Compile Include="Assets\Moba_Camera\Scripts\Moba_Camera_Boundaries.cs" />
+     <Compile Include="Assets\Moba_Camera\Scripts\Moba_Camera_Boundary.cs" />
+     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoMovementLine.cs" />
+     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoSwitchTarget.cs" />
+     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoTarget.cs" />
+     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoUI_Controls.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BackgroundController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BaseCharacterController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BombController.cs" />
@@ -116,6 +123,7 @@
      <Compile Include="Assets\MyAssets\Scripts\HeliWallController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\HudController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\InstantDeathController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Joystick.cs" />
      <Compile Include="Assets\MyAssets\Scripts\Level1GameController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\Level2GameController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\Level3GameController.cs" />
@@ -129,6 +137,7 @@
      <Compile Include="Assets\MyAssets\Scripts\MantisController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PersistantData.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PlayerMovementController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PortalController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PowerupController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PreferencesManager.cs" />
@@ -150,8 +159,15 @@
      <Compile Include="Assets\Scripts\ScrollingUVs.cs" />
      <Compile Include="Assets\Scripts\WheelsRotation.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\DetectionTrigger.cs" />
+     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\General\CameraBumper.cs" />
+     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\General\CameraControl.cs" />
+     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\General\LimitedFloat.cs" />
+     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\SmoothCameraAdvanced.cs" />
+     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\UnityObject.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\Moba_Camera\Readme\readme.txt" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />

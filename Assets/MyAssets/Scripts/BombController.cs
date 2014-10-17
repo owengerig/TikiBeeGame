@@ -52,11 +52,7 @@ namespace TikiBeeGame {
             SpriteRenderer sr = this.GetComponent<SpriteRenderer>();
             sr.sprite = bombSprites[Random.Range(0, 21)]; ;
 
-
-            explosionFX.renderer.sortingLayerName = "Particles";
-            explosionFX.renderer.sortingOrder = 0;
-            sparksFX.renderer.sortingLayerName = "Particles";
-            sparksFX.renderer.sortingOrder = 0;
+            runParticleSystem(sparksFX);
         }
 
 
@@ -99,10 +95,7 @@ namespace TikiBeeGame {
             }
 
             // Set the explosion effect's position to the bomb's position and play the particle system.
-            explosionFX.transform.position = transform.position;
-            explosionFX.renderer.sortingLayerName = "Particles";
-            explosionFX.renderer.sortingOrder = 0;
-            explosionFX.Play();
+            runParticleSystem(explosionFX);
 
             // Instantiate the explosion prefab.
             Instantiate(explosionFX, transform.position, Quaternion.identity);

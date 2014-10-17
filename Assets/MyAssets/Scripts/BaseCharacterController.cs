@@ -56,6 +56,7 @@ namespace TikiBeeGame
 	
 		virtual public void EnforceBounds()
 		{
+            return;
 			// 1
 			Vector3 newPosition = transform.position; 
 			Camera mainCamera = Camera.main;
@@ -89,6 +90,43 @@ namespace TikiBeeGame
                 Destroy(this.gameObject);
             }
 		}
+
+        virtual public void runParticleSystem(ParticleSystem ps) {
+            if (!ps.enableEmission) {
+                ps.enableEmission = true;
+            }
+            ps.transform.position = transform.position;
+            placeParticleSystem(ps);
+            ps.Play();
+        }
+        virtual public void runParticleEmitter(ParticleEmitter pe) {
+            if (!pe.enabled) {
+                pe.enabled = true;
+            }
+            pe.transform.position = transform.position;
+            placeParticleEmitter(pe);
+            pe.emit = true;
+        }
+        virtual public void stopParticleSystem(ParticleSystem ps) {
+            if (ps.enableEmission) {
+                ps.enableEmission = false;
+            }
+            ps.Stop();
+        }
+        virtual public void stopParticleEmitter(ParticleEmitter pe) {
+            if (pe.enabled) {
+                pe.enabled = false;
+            }
+            pe.emit = false;
+        }
+        virtual public void placeParticleSystem(ParticleSystem ps) {
+            ps.renderer.sortingLayerName = "Particles";
+            ps.renderer.sortingOrder = 0;
+        }
+        virtual public void placeParticleEmitter(ParticleEmitter pe) {
+            pe.renderer.sortingLayerName = "Particles";
+            pe.renderer.sortingOrder = 0;
+        }
 	}
 }
 
