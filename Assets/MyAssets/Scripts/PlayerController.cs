@@ -31,6 +31,7 @@ namespace TikiBeeGame {
 
         //Motion
         public float MOVE_SPEED; //2
+        public bool MOVE_ALLOWED = true;
         public float MOVE_SPEED_DEFAULT; //2
         public float TURN_SPEED; //5
 
@@ -79,14 +80,14 @@ namespace TikiBeeGame {
         virtual public void FixedUpdate() {
 
             if (PreferencesManager.END_GAME) {
-                stopMoving();
+                placeAtSpawnPoint();
             } else if (PreferencesManager.IS_WALKING) {
-                walkCharacterToPoint();
+                walkCharacter();
             }
         }
         virtual public void Update() {
             if (PreferencesManager.END_GAME) {
-                stopMoving();
+                placeAtSpawnPoint();
             } else {
                 if (!PreferencesManager.IS_WALKING) {
                     rigidbody2D.isKinematic = true;
@@ -103,7 +104,7 @@ namespace TikiBeeGame {
                 }
             }
         }
-        virtual public void stopMoving() {
+        virtual public void placeAtSpawnPoint() {
             transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
         }
         virtual public void Awake() {
@@ -131,22 +132,40 @@ namespace TikiBeeGame {
 
         #region FLYING MOVEMENT
         virtual public void flyCharacterToMouseClick() {
-
-            if (Input.GetButton("Fire1") && !guiClick) {
+            if (Input.GetButton("Fire1") && !guiClick && MOVE_ALLOWED) {
                 Vector3 moveToward = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                moveDirection = moveToward - transform.position;
+                Vector3 moveDirection = moveToward - transform.position;
                 moveDirection.z = 0;
                 moveDirection.Normalize();
+
+                LAST_CLICKED_POSITION = moveToward;
             }
-            continueFlying(moveDirection);
+            continueFlying(LAST_CLICKED_POSITION);
         }
+        //only used in level map
         virtual public void flyCharacterToPoint(Vector3 point) {
+            Vector3 moveToward = Vector3.zero;
+            Vector3 moveDirection = Vector3.zero;
 
-            Vector3 currentPosition = transform.position;
-            Vector3 moveToward = point;
+            if (MOVE_ALLOWED) {
+                moveToward = point;
+                moveDirection = moveToward - transform.position;
+            } else {
+                moveToward = transform.position;
+            }
 
-            moveDirection = moveToward - currentPosition;
+            if (moveToward.x > transform.position.x) {
+                MOVING_RIGHT = true;
+            } else {
+                MOVING_RIGHT = false;
+            }
+            if (moveToward.y > transform.position.y) {
+                MOVING_UP = true;
+            } else {
+                MOVING_UP = false;
+            }
+
             moveDirection.z = 0;
             moveDirection.Normalize();
             continueFlying(moveDirection);
@@ -154,33 +173,42 @@ namespace TikiBeeGame {
 
         virtual public void continueFlying(Vector3 moveDirection) {
             Vector3 target = moveDirection * MOVE_SPEED + transform.position;
+            target = new Vector3(target.x,target.y,transform.position.z);
             transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime);
 
-            float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            transform.rotation =
-                Quaternion.Slerp(transform.rotation,
-                                 Quaternion.Euler(0, 0, targetAngle),
-                                 TURN_SPEED * Time.deltaTime);
-            EnforceBounds();
+            //float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngle), TURN_SPEED * Time.deltaTime);
+            //EnforceBounds();
         }
 
         #endregion
         #region WALKING MOVEMENT
-        virtual public void walkCharacterToPoint() {
+        virtual public void walkCharacter() {
             IS_GROUNDED = Physics2D.OverlapCircle(GROUND_TRANSFORM.position, GROUND_RADIUS, GROUND_LAYER_MASK);
-
-
             float move = Input.GetAxis("Horizontal");
-            rigidbody2D.velocity = new Vector2(move * this.MOVE_SPEED, rigidbody2D.velocity.y);
 
-            if (move > 0 && !FACING_RIGHT) {
-                //moving in negative direction and not facing left
-                flip();
-            } else if (move < 0 && FACING_RIGHT) {
-                //moving to the right but not facing right
-                flip();
+            if (move > 0) {
+                MOVING_RIGHT = true;
+            } else {
+                MOVING_RIGHT = false;
             }
-            EnforceBounds();
+
+            //if (move > 0 && !FACING_RIGHT) {
+            //    //moving in negative direction and not facing left
+            //    FACING_RIGHT = true;
+            //    flipX();
+            //} else if (move < 0 && FACING_RIGHT) {
+            //    //moving to the right but not facing right
+            //    FACING_RIGHT = false;
+            //    flipX(); 
+            //}
+
+            if (MOVE_ALLOWED) {
+                rigidbody2D.velocity = new Vector2(move * this.MOVE_SPEED, rigidbody2D.velocity.y);
+            } else {
+                rigidbody2D.velocity = Vector2.zero;
+            }
+            //EnforceBounds();
         }
         virtual public void jump() {
 
@@ -196,14 +224,6 @@ namespace TikiBeeGame {
             rigidbody2D.AddForce(new Vector2(-(650) * 5, 0));
         }
 
-        private void flip() {
-            //flip local scale to ease tracking facing
-            //flipping the world so we dont need seperate animations for movign different directions
-            FACING_RIGHT = !FACING_RIGHT;
-            Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
-            transform.localScale = theScale;
-        }
         #endregion
 
         override public void takeDamage(int damage) {

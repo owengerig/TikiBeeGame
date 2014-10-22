@@ -28,7 +28,7 @@ namespace TikiBeeGame{
                     //if (PreferencesManager.CURRENT_PLAYER == null) {
                     //    PreferencesManager.CURRENT_PLAYER = Instantiate(tikibee) as GameObject;
                     //}
-                    //PreferencesManager.getPlayerController().spawn();
+
                     PreferencesManager.setBombus();
                     if (PreferencesManager.CURRENT_PLAYER == null) {
                         PreferencesManager.CURRENT_PLAYER = Instantiate(bombus) as GameObject;

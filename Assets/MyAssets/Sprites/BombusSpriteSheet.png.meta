@@ -50,42 +50,42 @@ TextureImporter:
     - name: BombusSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
+        x: 1
+        y: 2
         width: 108
-        height: 100
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BombusSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 121
-        y: 2
-        width: 117
-        height: 98
+        x: 120
+        y: 3
+        width: 116
+        height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BombusSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 245
-        y: 3
-        width: 117
-        height: 97
+        x: 248
+        y: 0
+        width: 114
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BombusSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 381
-        y: 3
-        width: 107
-        height: 91
+        x: 379
+        y: 2
+        width: 109
+        height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

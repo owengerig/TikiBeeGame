@@ -1,0 +1,164 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll"
+-define:UNITY_4_5_5
+-define:UNITY_4_5
+-define:UNITY_STANDALONE_WIN
+-define:ENABLE_MICROPHONE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_NEW_HIERARCHY 
+-define:ENABLE_AUDIO_FMOD
+-define:UNITY_STANDALONE
+-define:ENABLE_MONO
+-define:ENABLE_TERRAIN
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GENERICS
+-define:INCLUDE_WP8SUPPORT
+-define:ENABLE_MOVIES
+-define:ENABLE_WWW
+-define:ENABLE_IMAGEEFFECTS
+-define:INCLUDE_WP_BLUE_SUPPORT
+-define:ENABLE_WEBCAM
+-define:INCLUDE_METROSUPPORT
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_NETWORK
+-define:ENABLE_PHYSICS
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_SHADOWS
+-define:ENABLE_AUDIO
+-define:ENABLE_NAVMESH_CARVING
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_WIN
+"Assets/2D Grid Based AI/Scripts/EnemyAStar.cs"
+"Assets/2D Grid Based AI/Scripts/GameManager.cs"
+"Assets/2D Grid Based AI/Scripts/MyPathNode.cs"
+"Assets/2D Grid Based AI/Scripts/PriorityQueue.cs"
+"Assets/2D Grid Based AI/Scripts/SpatialAStar.cs"
+"Assets/2D Grid Based AI/Scripts/TurnToWall.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/BackgroundParallax.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/BackgroundPropSpawner.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Bomb.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/BombPickup.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/CameraFollow.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Destroyer.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Enemy.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/FollowPlayer.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Gun.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/HealthPickup.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/LayBombs.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Pauser.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/PickupSpawner.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/PlayerControl.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/PlayerHealth.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Remover.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Rocket.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Score.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/ScoreShadow.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/SetParticleSortingLayer.cs"
+"Assets/2DRPK/Demo Scenes/3rd Party/Unity Platformer/Scripts/Spawner.cs"
+Assets/2DRPK/Scripts/BasicPickup.cs
+Assets/2DRPK/Scripts/HorizontalMovingPlatform.cs
+Assets/2DRPK/Scripts/Monster.cs
+Assets/2DRPK/Scripts/PlayerSimpleHealth.cs
+Assets/2DRPK/Scripts/SwitchBackgroundColor.cs
+Assets/2DRPK/Scripts/VerticalMovingPlatform.cs
+Assets/Endless2DTerrain/Core/Scripts/Extensions.cs
+Assets/Endless2DTerrain/Core/Scripts/MeshPiece.cs
+Assets/Endless2DTerrain/Core/Scripts/PrefabManager.cs
+Assets/Endless2DTerrain/Core/Scripts/PrefabPool.cs
+Assets/Endless2DTerrain/Core/Scripts/PrefabRule.cs
+Assets/Endless2DTerrain/Core/Scripts/RenderQueue.cs
+Assets/Endless2DTerrain/Core/Scripts/Settings.cs
+Assets/Endless2DTerrain/Core/Scripts/TerrainDisplayer.cs
+Assets/Endless2DTerrain/Core/Scripts/TerrainManager.cs
+Assets/Endless2DTerrain/Core/Scripts/TerrainPiece.cs
+Assets/Endless2DTerrain/Core/Scripts/TerrainPool.cs
+Assets/Endless2DTerrain/Core/Scripts/TerrainRule.cs
+Assets/Endless2DTerrain/Core/Scripts/TransformHelpers.cs
+Assets/Endless2DTerrain/Core/Scripts/VertexGenerator.cs
+Assets/Endless2DTerrain/Demos/Scripts/ChaseCamera.cs
+Assets/Endless2DTerrain/Demos/Scripts/CoinPickup.cs
+Assets/Endless2DTerrain/Demos/Scripts/PlayerMovement.cs
+Assets/Moba_Camera/Scripts/Moba_Camera.cs
+Assets/Moba_Camera/Scripts/Moba_Camera_Boundaries.cs
+Assets/Moba_Camera/Scripts/Moba_Camera_Boundary.cs
+Assets/Moba_Camera/TestFiles/Scripts/DemoMovementLine.cs
+Assets/Moba_Camera/TestFiles/Scripts/DemoSwitchTarget.cs
+Assets/Moba_Camera/TestFiles/Scripts/DemoTarget.cs
+Assets/Moba_Camera/TestFiles/Scripts/DemoUI_Controls.cs
+Assets/MyAssets/Scripts/BackgroundController.cs
+Assets/MyAssets/Scripts/BaseCharacterController.cs
+Assets/MyAssets/Scripts/BombController.cs
+Assets/MyAssets/Scripts/BombSpawnerController.cs
+Assets/MyAssets/Scripts/BombusController.cs
+Assets/MyAssets/Scripts/CharacterSelectionHudController.cs
+Assets/MyAssets/Scripts/CreditsController.cs
+Assets/MyAssets/Scripts/CreditsHudController.cs
+Assets/MyAssets/Scripts/DoorController.cs
+Assets/MyAssets/Scripts/EndlessLevelBackgroundController.cs
+Assets/MyAssets/Scripts/EndlessLevelCameraController.cs
+Assets/MyAssets/Scripts/EnemyController.cs
+Assets/MyAssets/Scripts/FadeScene.cs
+Assets/MyAssets/Scripts/FlameController.cs
+Assets/MyAssets/Scripts/GameController.cs
+Assets/MyAssets/Scripts/GameHudController.cs
+Assets/MyAssets/Scripts/HeartController.cs
+Assets/MyAssets/Scripts/HeliWallController.cs
+Assets/MyAssets/Scripts/HudController.cs
+Assets/MyAssets/Scripts/InstantDeathController.cs
+Assets/MyAssets/Scripts/Joystick.cs
+Assets/MyAssets/Scripts/Level1GameController.cs
+Assets/MyAssets/Scripts/Level2GameController.cs
+Assets/MyAssets/Scripts/Level3GameController.cs
+Assets/MyAssets/Scripts/Level4GameController.cs
+Assets/MyAssets/Scripts/LevelController.cs
+Assets/MyAssets/Scripts/LevelMapGameController.cs
+Assets/MyAssets/Scripts/Logger.cs
+Assets/MyAssets/Scripts/MainMenuController.cs
+Assets/MyAssets/Scripts/MainMenuHudController.cs
+Assets/MyAssets/Scripts/MainMenuTextController.cs
+Assets/MyAssets/Scripts/MantisController.cs
+Assets/MyAssets/Scripts/PersistantData.cs
+Assets/MyAssets/Scripts/PlayerController.cs
+Assets/MyAssets/Scripts/PlayerMovementController.cs
+Assets/MyAssets/Scripts/PortalController.cs
+Assets/MyAssets/Scripts/PowerupController.cs
+Assets/MyAssets/Scripts/PreferencesManager.cs
+Assets/MyAssets/Scripts/RETIRED_FlameThrowerController.cs
+Assets/MyAssets/Scripts/RETIRED_SpeedBoostController.cs
+Assets/MyAssets/Scripts/SecretLevel1GameController.cs
+Assets/MyAssets/Scripts/SettingsHudController.cs
+Assets/MyAssets/Scripts/SocialController.cs
+Assets/MyAssets/Scripts/SpawnPoint.cs
+Assets/MyAssets/Scripts/StarController.cs
+Assets/MyAssets/Scripts/StarFighterLevel1GameController.cs
+Assets/MyAssets/Scripts/StatModiferHudController.cs
+Assets/MyAssets/Scripts/TEST.cs
+Assets/MyAssets/Scripts/TikiBeeController.cs
+Assets/Scripts/AudioOffset.cs
+Assets/Scripts/CaptureNormals.cs
+Assets/Scripts/Punch.cs
+Assets/Scripts/RandomFloorBotMovement.cs
+Assets/Scripts/Rotator.cs
+Assets/Scripts/ScrollingUVs.cs
+Assets/Scripts/WheelsRotation.cs
+Assets/SimpleParticlePack/Scripts/ParticleTester.cs
+Assets/SmoothFollowAdvanced/Scripts/DetectionTrigger.cs
+Assets/SmoothFollowAdvanced/Scripts/General/CameraBumper.cs
+Assets/SmoothFollowAdvanced/Scripts/General/CameraControl.cs
+Assets/SmoothFollowAdvanced/Scripts/General/LimitedFloat.cs
+Assets/SmoothFollowAdvanced/Scripts/SmoothCameraAdvanced.cs
+Assets/SmoothFollowAdvanced/Scripts/UnityObject.cs
+Assets/TitanShipController.cs
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Mono\lib/mono/unity\System.Runtime.Serialization.dll"
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Mono\lib/mono/unity\System.Xml.Linq.dll"

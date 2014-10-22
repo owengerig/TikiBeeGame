@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
@@ -48,6 +49,23 @@ namespace TikiBeeGame {
                 }
                 if (destination.y < bottomWall) {
                     destination = new Vector3(destination.x, bottomWall, 0);
+                }
+
+                if (destination.x.Equals(rightWall) || destination.x.Equals(leftWall) || destination.y.Equals(topWall) || destination.y.Equals(bottomWall)) {
+                    //Logger.logTest("step1");
+                    float playerX = PreferencesManager.CURRENT_PLAYER.transform.position.x;
+                    float playerY = PreferencesManager.CURRENT_PLAYER.transform.position.y;
+                    if ((Math.Abs(playerX - leftEndMarker.position.x) < .5 && !PreferencesManager.getPlayerController().MOVING_RIGHT) ||
+                        (Math.Abs(playerX - rightEndMarker.position.x) < .5 && PreferencesManager.getPlayerController().MOVING_RIGHT) ||
+                        (Math.Abs(playerY - topEndMarker.position.x) < .5 && PreferencesManager.getPlayerController().MOVING_UP) ||
+                        (Math.Abs(playerY - bottomEndMarker.position.x) < .5 && !PreferencesManager.getPlayerController().MOVING_UP)) {
+
+                        PreferencesManager.getPlayerController().MOVE_ALLOWED = false;
+                        Logger.logTest("false");
+                    } else {
+                        PreferencesManager.getPlayerController().MOVE_ALLOWED = true;
+                        Logger.logTest("true");
+                    }
                 }
 
                 // here to always set the Z

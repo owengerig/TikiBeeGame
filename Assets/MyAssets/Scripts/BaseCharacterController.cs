@@ -17,7 +17,10 @@ namespace TikiBeeGame
         public int HEALTH = 100;
         public int DAMAGE = 0;
 
-		public Vector3 moveDirection;
+        public bool MOVING_RIGHT;
+        public bool MOVING_UP;
+
+		public Vector3 LAST_CLICKED_POSITION = Vector3.zero;
 
         public BaseCharacterController()
 		{
@@ -53,7 +56,23 @@ namespace TikiBeeGame
 		{
             Logger.logCharacter(other.tag + " hit OnTriggerExit2D on " + this.tag);
 		}
-	
+
+        virtual public void flipX() {
+            //flip local scale to ease tracking facing
+            //flipping the world so we dont need seperate animations for movign different directions
+            MOVING_RIGHT = !MOVING_RIGHT;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
+        virtual public void flipY() {
+            //flip local scale to ease tracking facing
+            //flipping the world so we dont need seperate animations for movign different directions
+            MOVING_UP = !MOVING_UP;
+            Vector3 theScale = transform.localScale;
+            theScale.y *= -1;
+            transform.localScale = theScale;
+        }
 		virtual public void EnforceBounds()
 		{
             return;
@@ -64,20 +83,20 @@ namespace TikiBeeGame
 			float yMax = mainCamera.orthographicSize;
 			
 			// 2
-			float xDist = mainCamera.aspect * mainCamera.orthographicSize; 
+            float xDist = mainCamera.aspect * mainCamera.orthographicSize;// -.5f; 
 			float xMax = cameraPosition.x + xDist;
 			float xMin = cameraPosition.x - xDist;
 			
 			// 3
 			if ( newPosition.x < xMin-1 || newPosition.x > xMax ) {
 				newPosition.x = Mathf.Clamp( newPosition.x, xMin, xMax );
-				moveDirection.x = -moveDirection.x;
+				LAST_CLICKED_POSITION.x = -LAST_CLICKED_POSITION.x;
 			}
 			
 			//vertical bounds
 			if (newPosition.y < -yMax || newPosition.y > yMax) {
 				newPosition.y = Mathf.Clamp( newPosition.y, -yMax, yMax );
-				moveDirection.y = -moveDirection.y;
+				LAST_CLICKED_POSITION.y = -LAST_CLICKED_POSITION.y;
 			}
 			// 4
 			transform.position = newPosition;

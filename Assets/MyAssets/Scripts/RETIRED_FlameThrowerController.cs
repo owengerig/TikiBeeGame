@@ -24,7 +24,7 @@ namespace TikiBeeGame{
 			
 			Vector3 moveToward = tbcGO.transform.position ;
 			// 4
-			moveDirection = moveToward - currentPosition;
+            Vector3 moveDirection = moveToward - currentPosition;
 			moveDirection.z = 0; 
 			moveDirection.Normalize();
 			
