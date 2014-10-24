@@ -1,0 +1,16 @@
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\Assembly-CSharp-Editor.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\Assembly-UnityScript.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\SyntaxTree.VisualStudio.Unity.Bridge.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\SyntaxTree.VisualStudio.Unity.Messaging.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEditor.Graphs.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityVS.VersionSpecific.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEditor.Graphs.xml
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\UnityVS.TikiBeeGame.CSharp.Editor.csprojResolveAssemblyReference.cache
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp-Editor.dll
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp-Editor.pdb

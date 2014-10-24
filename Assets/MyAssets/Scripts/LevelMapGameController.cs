@@ -8,7 +8,7 @@ namespace TikiBeeGame {
         public Transform level3Area = null;
         public Transform level4Area = null;
 
-        private Vector2 destination = new Vector2(0f,0f);
+        private Vector2 destination = Vector2.zero;
         private bool moving = false;
 
         private bool playerMovementStyleSave = false;
@@ -95,15 +95,11 @@ namespace TikiBeeGame {
                     PreferencesManager.IS_WALKING = playerMovementStyleSave;
                     LevelController.loadLevel(PreferencesManager.DESTINATION_LEVEL_INDEX);
                     PreferencesManager.END_GAME = false;
-
                 } else if (!moving) {
-                    moveBetweenAreas();
+                    PreferencesManager.getPlayerController().flyCharacterToPoint(new Vector3(destination.x, destination.y, PreferencesManager.CURRENT_PLAYER.transform.position.z));
+                    moving = true;
                 }
             }
-        }
-        void moveBetweenAreas(){
-            PreferencesManager.getPlayerController().flyCharacterToPoint(new Vector3(destination.x,destination.y,PreferencesManager.CURRENT_PLAYER.transform.position.z));
-            moving = true;
         }
     }
 }

@@ -7,6 +7,7 @@ namespace TikiBeeGame {
         // Use this for initialization
         void Start() {
             PreferencesManager.setDefaults();
+            PersistantData.checkForUpdates();
         if (Time.timeScale < 1) {
             Time.timeScale = 1;
         }

@@ -18,8 +18,9 @@ namespace TikiBeeGame {
         private static int LEVEL_2_INDEX = 6;
         private static int LEVEL_3_INDEX = 7;
         private static int LEVEL_4_INDEX = 8;
-        private static int SECRET_LEVEL_1_INDEX = 9;
-        private static int CREDITS_INDEX = 10;
+        private static int LEVEL_5_INDEX = 9;
+        private static int SECRET_LEVEL_1_INDEX = 10;
+        private static int CREDITS_INDEX = 11;
 
         public static void loadMainMenuScene() {
             if (PreferencesManager.CURRENT_PLAYER != null) { PreferencesManager.getPlayerController().DestroyMe(); }
@@ -52,6 +53,10 @@ namespace TikiBeeGame {
         public static void loadLevel4Scene() {
             PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
             FadeScene.LoadLevel(LEVEL_4_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
+        }
+        public static void loadLevel5Scene() {
+            PreferencesManager.getPlayerController().saveCurrencyToPersistantStore();
+            FadeScene.LoadLevel(LEVEL_5_INDEX, levelFadeInTime, levelFadeOutTime, new Color(Random.value, Random.value, Random.value));
         }
         public static void loadSecretLevel1Scene() {
             if (Application.loadedLevel == SECRET_LEVEL_1_INDEX) { return; }
@@ -164,6 +169,10 @@ namespace TikiBeeGame {
             
             if (index == LEVEL_4_INDEX) {
                 loadLevel4Scene();
+            }
+
+            if (index == LEVEL_5_INDEX) {
+                loadLevel5Scene();
             }
             
             if (index == SECRET_LEVEL_1_INDEX) {

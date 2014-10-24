@@ -87,7 +87,7 @@ namespace TikiBeeGame {
         //implement knock back then let base handle the rest
         override public void OnTriggerEnter2D(Collider2D other) {
             if (other.CompareTag("Player") && MAXDAMAGE > 0) {
-                PreferencesManager.getPlayerController().knockBack();
+                PreferencesManager.getPlayerController().knockBack(650);
                 giveDamge(this.DAMAGE);
             }
         }

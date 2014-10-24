@@ -135,6 +135,7 @@
      <Compile Include="Assets\MyAssets\Scripts\MainMenuHudController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\MainMenuTextController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\MantisController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\MySmoothFollow.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PersistantData.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PlayerMovementController.cs" />

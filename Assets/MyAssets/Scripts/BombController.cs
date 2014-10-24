@@ -8,10 +8,9 @@ namespace TikiBeeGame {
         public Transform bombSpawner;
 
         public float bombRadius = 10f;			// Radius within which enemies are killed.
-        public float bombForce = 100f;			// Force that enemies are thrown from the blast.
         public AudioClip boom;					// Audioclip of explosion.
         public AudioClip fuse;					// Audioclip of fuse.
-        public float fuseTime = 1.5f;
+        private float fuseTime = Random.Range(.7f,2);
         public float volume = .1f;
 
         public List<Sprite> bombSprites; //set in editor
@@ -42,7 +41,7 @@ namespace TikiBeeGame {
         void Start() {
 
             this.HEALTH = -1;
-            this.DAMAGE = 15;
+            this.DAMAGE = Random.Range(10,35);
             this.MAXDAMAGE = 99999;
 
             // If the bomb has no parent, it has been laid by the player and should detonate.
@@ -53,8 +52,12 @@ namespace TikiBeeGame {
             sr.sprite = bombSprites[Random.Range(0, 21)]; ;
 
             runParticleSystem(sparksFX);
+            sparksFX.transform.position = transform.position+(new Vector3(.5f,.5f,0f));
         }
 
+        void Update() {
+            sparksFX.transform.position = transform.position + (new Vector3(.5f, .5f, 0f));
+        }
 
         IEnumerator BombDetonation() {
             // Play the fuse audioclip.
@@ -84,13 +87,15 @@ namespace TikiBeeGame {
                 if (rb != null && rb.tag == "Player") {
                     // Find the Enemy script and set the enemy's health to zero.
                     PreferencesManager.getPlayerController().takeDamage(DAMAGE);
+                    PreferencesManager.getPlayerController().knockBack(400);
+                    //float bombForce = 700f;			// Force that enemies are thrown from the blast.
 
-                    // Find a vector from the bomb to the enemy.
-                    Vector3 deltaPos = rb.transform.position - transform.position;
+                    //// Find a vector from the bomb to the enemy.
+                    //Vector3 deltaPos = rb.transform.position - transform.position;
 
-                    // Apply a force in this direction with a magnitude of bombForce.
-                    Vector3 force = deltaPos.normalized * bombForce;
-                    rb.AddForce(force);
+                    //// Apply a force in this direction with a magnitude of bombForce.
+                    //Vector3 force = deltaPos.normalized * bombForce;
+                    //rb.AddForce(force);
                 }
             }
 
@@ -98,11 +103,13 @@ namespace TikiBeeGame {
             runParticleSystem(explosionFX);
 
             // Instantiate the explosion prefab.
-            Instantiate(explosionFX, transform.position, Quaternion.identity);
+            //Instantiate(explosionFX, transform.position, Quaternion.identity);
 
 
             // Play the explosion sound effect.
             AudioSource.PlayClipAtPoint(boom, transform.position, volume);
+
+            stopParticleSystem(sparksFX);
 
             // Destroy the bomb.
             Destroy(gameObject);

@@ -116,6 +116,7 @@ namespace TikiBeeGame {
 
             PreferencesManager.END_GAME = false;
 
+            LAST_CLICKED_POSITION = Vector3.zero;
             transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
 
             HEALTH = Mathf.RoundToInt(HEALTH_MULTIPLIER * 100.0f); ;
@@ -127,53 +128,45 @@ namespace TikiBeeGame {
 
             PreferencesManager.END_GAME = false;
 
+            LAST_CLICKED_POSITION = Vector3.zero;
             transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
         }
 
         #region FLYING MOVEMENT
         virtual public void flyCharacterToMouseClick() {
-            if (Input.GetButton("Fire1") && !guiClick && MOVE_ALLOWED) {
-                Vector3 moveToward = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //need to review because if only click happens (to get away from wall) the first click is ignored?
+            if (Input.GetButton("Fire1") && !guiClick) {
+                LAST_CLICKED_POSITION = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
-                Vector3 moveDirection = moveToward - transform.position;
-                moveDirection.z = 0;
-                moveDirection.Normalize();
+                if (LAST_CLICKED_POSITION.x > transform.position.x) {
+                    MOVING_RIGHT = true;
+                } else {
+                    MOVING_RIGHT = false;
+                }
+                if (LAST_CLICKED_POSITION.y > transform.position.y) {
+                    MOVING_UP = true;
+                } else {
+                    MOVING_UP = false;
+                }
 
-                LAST_CLICKED_POSITION = moveToward;
+                LAST_CLICKED_POSITION.Normalize();
             }
-            continueFlying(LAST_CLICKED_POSITION);
+            if (!MOVE_ALLOWED) {
+                LAST_CLICKED_POSITION = Vector3.zero;
+            }
+            continueFlying();
         }
+
         //only used in level map
         virtual public void flyCharacterToPoint(Vector3 point) {
-            Vector3 moveToward = Vector3.zero;
-            Vector3 moveDirection = Vector3.zero;
-
-            if (MOVE_ALLOWED) {
-                moveToward = point;
-                moveDirection = moveToward - transform.position;
-            } else {
-                moveToward = transform.position;
-            }
-
-            if (moveToward.x > transform.position.x) {
-                MOVING_RIGHT = true;
-            } else {
-                MOVING_RIGHT = false;
-            }
-            if (moveToward.y > transform.position.y) {
-                MOVING_UP = true;
-            } else {
-                MOVING_UP = false;
-            }
-
-            moveDirection.z = 0;
-            moveDirection.Normalize();
-            continueFlying(moveDirection);
+            LAST_CLICKED_POSITION = point - transform.position;
+            LAST_CLICKED_POSITION.Normalize();
+            continueFlying();
         }
 
-        virtual public void continueFlying(Vector3 moveDirection) {
-            Vector3 target = moveDirection * MOVE_SPEED + transform.position;
-            target = new Vector3(target.x,target.y,transform.position.z);
+        virtual public void continueFlying() {
+            Vector3 target = LAST_CLICKED_POSITION * MOVE_SPEED + transform.position;
+            target.z = transform.position.z;
             transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime);
 
             //float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
@@ -185,6 +178,7 @@ namespace TikiBeeGame {
         #region WALKING MOVEMENT
         virtual public void walkCharacter() {
             IS_GROUNDED = Physics2D.OverlapCircle(GROUND_TRANSFORM.position, GROUND_RADIUS, GROUND_LAYER_MASK);
+            if (IS_GROUNDED) { MOVING_UP = false; }
             float move = Input.GetAxis("Horizontal");
 
             if (move > 0) {
@@ -215,13 +209,15 @@ namespace TikiBeeGame {
             if (IS_GROUNDED || !JUMPED) {
                 rigidbody2D.AddForce(new Vector2(0, 650));
 
+                MOVING_UP = true;
+
                 if (!JUMPED && !IS_GROUNDED) {
                     JUMPED = true;
                 }
             }
         }
-        virtual public void knockBack() {
-            rigidbody2D.AddForce(new Vector2(-(650) * 5, 0));
+        virtual public void knockBack(float force) {
+            rigidbody2D.AddForce(new Vector2(-(force) * 5, 0));
         }
 
         #endregion
