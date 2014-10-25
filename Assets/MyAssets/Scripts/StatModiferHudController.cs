@@ -11,6 +11,7 @@ namespace TikiBeeGame {
 
         public Sprite backgroundTB;
         public Sprite backgroundBB;
+        public Sprite backgroundPR;
         public Sprite backgroundDefault;
         public Texture2D emptyBar;
         public Texture2D fullBar;
@@ -39,7 +40,7 @@ namespace TikiBeeGame {
             GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(rx, ry, 1));
             /////////////////////////////////////////////////////////////////////
 
-            if (!PreferencesManager.TIKIBEE_SELECTED && !PreferencesManager.BOMBUS_SELECTED) {
+            if (!PreferencesManager.TIKIBEE_SELECTED && !PreferencesManager.BOMBUS_SELECTED && !PreferencesManager.PERRER_SELECTED) {
                 LevelController.loadCharacterSelection();
                 return;
             }
@@ -48,8 +49,10 @@ namespace TikiBeeGame {
             SpriteRenderer sr = backgroundController.GetComponent<SpriteRenderer>();
             if (PreferencesManager.TIKIBEE_SELECTED) {
                 sr.sprite = backgroundTB;
-            } else {
+            } else if (PreferencesManager.TIKIBEE_SELECTED) {
                 sr.sprite = backgroundBB;
+            } else {
+                sr.sprite = backgroundPR;
             }
             
             
@@ -60,6 +63,7 @@ namespace TikiBeeGame {
             if (GUI.Button(new Rect(300, 90, 230, 60), "Back", menuButtonStyle)) {
                 PreferencesManager.BOMBUS_SELECTED = false;
                 PreferencesManager.TIKIBEE_SELECTED = false;
+                PreferencesManager.PERRER_SELECTED = false;
             }
             if (GUI.Button(new Rect(300, 160, 230, 60), "Play", menuButtonStyle)) {
                 PersistantData.Save(saveObject);
@@ -73,8 +77,6 @@ namespace TikiBeeGame {
             float buttonAlignLeftY = 200;
             float buttonWidth = 370;
             float buttonHeight = 50;
-            float textAlignLeftX = buttonAlignLeftX + 80;
-            float textAlignLeftY = buttonAlignLeftX + 100;
             float labelWidth = 140;
             float labelHeight = 50;
             float buttonLabelBuffer = 5.0f;
@@ -440,6 +442,177 @@ namespace TikiBeeGame {
                     GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxBurstDamage / saveObject.BB_PLAYER_BURST_DAMAGE), labelHeight));
                         GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
                     GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+            } else if (PreferencesManager.PERRER_SELECTED) {
+                #region Perrer Health Modifier
+                //health multiplier
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += 40, buttonWidth, buttonHeight), "Health Multiplier", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_HEALTH_MODIFIER + 1 > maxHealthMultiplier) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_HEALTH_MODIFIER += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), (saveObject.PR_PLAYER_HEALTH_MODIFIER * 100).ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxHealthMultiplier / saveObject.PR_PLAYER_HEALTH_MODIFIER), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+                #region Bombus Score Modifier
+                //score multiplier
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += 130, buttonWidth, buttonHeight), "Score Multiplier", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SCORE_MODIFIER + 1 > maxScoreModifier) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SCORE_MODIFIER += .1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_SCORE_MODIFIER.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxScoreModifier / saveObject.PR_PLAYER_SCORE_MODIFIER), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+
+                #region Bombus Speed Modifier
+                //health multiplier
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += buttonHeight, buttonWidth, buttonHeight), "Speed Multiplier", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SPEED_MODIFIER + 1 > maxSpeedMultiplier) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SPEED_MODIFIER += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), (saveObject.PR_PLAYER_HEALTH_MODIFIER * 100).ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxSpeedMultiplier / saveObject.PR_PLAYER_SPEED_MODIFIER), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Shield Duration
+                //Shield duration and cooldown
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += 120, buttonWidth, buttonHeight), "Shield Duration", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SHIELD_DURATION + 1 > maxShieldDuration) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SHIELD_DURATION += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_SHIELD_DURATION.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxShieldDuration / saveObject.PR_PLAYER_SHIELD_DURATION), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Shield Cooldown
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += buttonHeight, buttonWidth, buttonHeight), "Shield Cooldown", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SHIELD_COOLDOWN + 1f > maxShieldCooldown) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SHIELD_COOLDOWN += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_SHIELD_COOLDOWN.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxShieldCooldown / saveObject.PR_PLAYER_SHIELD_COOLDOWN), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Speed Boost Duration
+                //speed boost duration cooldown and multiplier
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += 85, buttonWidth, buttonHeight), "Boost Duration", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SPEED_BOOST_DURATION + 1 > maxSpeedBoostDuration) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SPEED_BOOST_DURATION += 1f;
+                }
+                GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_SPEED_BOOST_DURATION.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxSpeedBoostDuration / saveObject.PR_PLAYER_SPEED_BOOST_DURATION), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Speed Boost Cooldown
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += buttonHeight, buttonWidth, buttonHeight), "Boost Cooldown", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SPEED_BOOST_COOLDOWN + 1f > maxSpeedBoostCooldown) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SPEED_BOOST_COOLDOWN += 1f;
+                }
+                GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_SPEED_BOOST_COOLDOWN.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxSpeedBoostCooldown / saveObject.PR_PLAYER_SPEED_BOOST_COOLDOWN), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Speed Boost Modifier
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += buttonHeight, buttonWidth, buttonHeight), "Boost Multiplier", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_SPEED_BOOST_MULTIPLIER + 1f > maxSpeedBoostModifier) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_SPEED_BOOST_MULTIPLIER += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_SPEED_BOOST_MULTIPLIER.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxSpeedBoostModifier / saveObject.PR_PLAYER_SPEED_BOOST_MULTIPLIER), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Burst Cooldown
+                //arcane burst cooldown radio and damage
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += 75, buttonWidth, buttonHeight), "Burst Cooldown", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_BURST_COOLDOWN + 1f > maxBurstCooldown) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_BURST_COOLDOWN += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_BURST_COOLDOWN.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxBurstCooldown / saveObject.PR_PLAYER_BURST_COOLDOWN), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Burst Radius
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += buttonHeight, buttonWidth, buttonHeight), "Burst Radius", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_BURST_RADIUS + 1f > maxBurstRadius) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_BURST_RADIUS += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_BURST_RADIUS.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxBurstRadius / saveObject.PR_PLAYER_BURST_RADIUS), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
+                GUI.EndGroup();
+                #endregion
+
+                #region Bombus Burst Damage
+                if (GUI.Button(new Rect(buttonAlignLeftX, buttonAlignLeftY += buttonHeight, buttonWidth, buttonHeight), "Burst Damage", StatModifersButtonStyle)) {
+                    if (saveObject.PLAYER_CURRENCY - 1 < 0 || saveObject.PR_PLAYER_BURST_DAMAGE + 1f > maxBurstDamage) { return; }
+                    saveObject.PLAYER_CURRENCY -= 1;
+                    saveObject.PR_PLAYER_BURST_DAMAGE += 1f;
+                }
+                //GUI.Label(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight), saveObject.PR_PLAYER_BURST_DAMAGE.ToString(), StatModifersButtonStyle);
+                GUI.BeginGroup(new Rect(buttonAlignLeftX + buttonWidth + buttonLabelBuffer, buttonAlignLeftY, labelWidth, labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), emptyBar);
+                GUI.BeginGroup(new Rect(0, 0, labelWidth / (maxBurstDamage / saveObject.PR_PLAYER_BURST_DAMAGE), labelHeight));
+                GUI.Box(new Rect(0, 0, labelWidth, labelHeight), fullBar);
+                GUI.EndGroup();
                 GUI.EndGroup();
                 #endregion
             }

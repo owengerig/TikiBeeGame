@@ -444,6 +444,7 @@ MonoBehaviour:
     m_StretchHeight: 0
   backgroundTB: {fileID: 21300000, guid: 1f64e3016ee635a46a5d4a3546addd63, type: 3}
   backgroundBB: {fileID: 21300000, guid: f6dcc0b58cff74e41907ff5d19c84ba4, type: 3}
+  backgroundPR: {fileID: 21300000, guid: a6c926bb158410b4e91abe7344d72942, type: 3}
   backgroundDefault: {fileID: 21300000, guid: d9d2f9e99083dd948a20fe06d6b5dd5d, type: 3}
   emptyBar: {fileID: 2800000, guid: ca7e55af11ce3e140b3f4a661f0a5323, type: 3}
   fullBar: {fileID: 2800000, guid: ea77e65b933f8f241a029577f1b740c6, type: 3}

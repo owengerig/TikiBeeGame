@@ -56,13 +56,13 @@ namespace TikiBeeGame
                 //		}
 
 
-                GameObject hudGO = GameObject.FindGameObjectWithTag("Hud");
-                HudController hc = hudGO.GetComponent<GameHudController>();
+                //GameObject hudGO = GameObject.FindGameObjectWithTag("Hud");
+                //HudController hc = hudGO.GetComponent<GameHudController>();
 
-                Rect shieldsButtonRect = new Rect(Screen.width - 50, Screen.height - 25, 50, 25);
+                //Rect shieldsButtonRect = new Rect(Screen.width - 50, Screen.height - 25, 50, 25);
 
-                Vector2 position = new Vector2(Screen.width - 50, Screen.height - 25);
-                Vector3 position2 = new Vector3(Screen.width - 50, Screen.height - 25, 1);
+                //Vector2 position = new Vector2(Screen.width - 50, Screen.height - 25);
+                //Vector3 position2 = new Vector3(Screen.width - 50, Screen.height - 25, 1);
 
                 //Vector2 p = new Vector2(hc.shieldsButtonRect.x, hc.shieldsButtonRect.y);
                 //GUIUtility.GUIToScreenPoint(hc.shieldsButtonRect.position);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TikiBeeGame {
     class BombSpawnerController : EnemyController {
-        public GameObject bomb;
+        public GameObject bomb = null;
         private List<GameObject> instatiatedBombs = new List<GameObject>();
         private bool playerClose = false;
 

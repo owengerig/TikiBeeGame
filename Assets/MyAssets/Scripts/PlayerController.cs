@@ -15,6 +15,9 @@ namespace TikiBeeGame {
         //player
         public int CURRENCY = 0;
 
+        //Fire
+        public GameObject BULLETGO;
+
         //powerup
         public int SCORE;
         public float SCORE_MODIFIER;
@@ -59,10 +62,8 @@ namespace TikiBeeGame {
 
             if (!PreferencesManager.IS_WALKING) {
                 rigidbody2D.isKinematic = true;
-                rigidbody2D.fixedAngle = true;
             } else {
                 rigidbody2D.isKinematic = false;
-                rigidbody2D.fixedAngle = false;
             }
 
             stopParticleSystem(scoreParticleSystem);
@@ -91,11 +92,9 @@ namespace TikiBeeGame {
             } else {
                 if (!PreferencesManager.IS_WALKING) {
                     rigidbody2D.isKinematic = true;
-                    rigidbody2D.fixedAngle = true;
                     flyCharacterToMouseClick();
                 } else {
                     rigidbody2D.isKinematic = false;
-                    rigidbody2D.fixedAngle = false;
                     if (Input.GetKeyDown(KeyCode.Space)) {
                         jump();
                     } else if (IS_GROUNDED) {
@@ -117,7 +116,7 @@ namespace TikiBeeGame {
             PreferencesManager.END_GAME = false;
 
             LAST_CLICKED_POSITION = Vector3.zero;
-            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .2f, 1));
+            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.1f, .3f, 1));
 
             HEALTH = Mathf.RoundToInt(HEALTH_MULTIPLIER * 100.0f); ;
             SCORE = 0;
@@ -136,24 +135,29 @@ namespace TikiBeeGame {
         virtual public void flyCharacterToMouseClick() {
             //need to review because if only click happens (to get away from wall) the first click is ignored?
             if (Input.GetButton("Fire1") && !guiClick) {
-                LAST_CLICKED_POSITION = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
-                if (LAST_CLICKED_POSITION.x > transform.position.x) {
+                Vector3 pointClicked = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (pointClicked.x > transform.position.x) {
                     MOVING_RIGHT = true;
                 } else {
                     MOVING_RIGHT = false;
                 }
-                if (LAST_CLICKED_POSITION.y > transform.position.y) {
+                if (pointClicked.y > transform.position.y) {
                     MOVING_UP = true;
                 } else {
                     MOVING_UP = false;
                 }
+                LAST_CLICKED_POSITION = pointClicked - transform.position;
 
                 LAST_CLICKED_POSITION.Normalize();
             }
             if (!MOVE_ALLOWED) {
-                LAST_CLICKED_POSITION = Vector3.zero;
+                stopFlying();
+            } else {
+                continueFlying();
             }
+        }
+        public void stopFlying() {
+            LAST_CLICKED_POSITION = Vector3.zero;
             continueFlying();
         }
 
@@ -178,13 +182,29 @@ namespace TikiBeeGame {
         #region WALKING MOVEMENT
         virtual public void walkCharacter() {
             IS_GROUNDED = Physics2D.OverlapCircle(GROUND_TRANSFORM.position, GROUND_RADIUS, GROUND_LAYER_MASK);
-            if (IS_GROUNDED) { MOVING_UP = false; }
+            if (IS_GROUNDED) {
+                GetComponent<Animator>().SetBool("IsJumping", false);
+                MOVING_UP = false;
+            } else {
+                MOVING_UP = true;
+                GetComponent<Animator>().SetBool("IsJumping", true); 
+            }
             float move = Input.GetAxis("Horizontal");
 
-            if (move > 0) {
+            if (move > 0 && !MOVING_RIGHT) {
+                if (GetComponent<Animator>().GetBool("IsMoving")) {
+                    flipX();
+                }
                 MOVING_RIGHT = true;
-            } else {
+            } else if (move < 0 && MOVING_RIGHT) {
+                    flipX();
                 MOVING_RIGHT = false;
+            }
+
+            if (move == 0) {
+                GetComponent<Animator>().SetBool("IsMoving", false);
+            } else {
+                GetComponent<Animator>().SetBool("IsMoving", true);
             }
 
             //if (move > 0 && !FACING_RIGHT) {
@@ -209,15 +229,15 @@ namespace TikiBeeGame {
             if (IS_GROUNDED || !JUMPED) {
                 rigidbody2D.AddForce(new Vector2(0, 650));
 
-                MOVING_UP = true;
-
                 if (!JUMPED && !IS_GROUNDED) {
                     JUMPED = true;
                 }
             }
         }
         virtual public void knockBack(float force) {
-            rigidbody2D.AddForce(new Vector2(-(force) * 5, 0));
+            if (!SHIELD_ACTIVE) {
+                rigidbody2D.AddForce(new Vector2(-(force) * 5, 0));
+            }
         }
 
         #endregion
@@ -253,7 +273,11 @@ namespace TikiBeeGame {
 
             return this.HEALTH;
         }
-
+        virtual public void fire() {
+            GameObject bullet = Instantiate(BULLETGO) as GameObject;
+            bullet.SetActive(true);
+            bullet.transform.position = this.transform.position;
+        }
         virtual public void gainScore(int score) {
             runParticleSystem(scoreParticleSystem);
 

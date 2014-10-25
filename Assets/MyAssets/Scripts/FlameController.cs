@@ -43,7 +43,7 @@ namespace TikiBeeGame{
                     flameParticleSystem.startLifetime = 0f;
                     boxCollider.enabled = false;
                 }
-                Invoke("resetSwitch", Random.RandomRange(2f,5f));
+                Invoke("resetSwitch", Random.Range(2f,5f));
                 switchAnimation = false;
             }
         }

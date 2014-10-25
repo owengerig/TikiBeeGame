@@ -3,7 +3,6 @@ using System.Collections;
 
 namespace TikiBeeGame {
     public class MantisController : EnemyController {
-        private Animator anim;
         private Vector3 direction;
         private Vector3 startingPosition;
 
@@ -11,10 +10,6 @@ namespace TikiBeeGame {
         public float speed;
         public float startingDirection = 1; //1 right, -1 left
 
-        void Awake() {
-            anim = GetComponent<Animator>();
-
-        }
         void Start() {
             this.HEALTH = 30;
             this.DAMAGE = 5;

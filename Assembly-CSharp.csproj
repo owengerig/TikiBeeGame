@@ -108,6 +108,7 @@
      <Compile Include="Assets\MyAssets\Scripts\BombController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BombSpawnerController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\BombusController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\BulletController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\CharacterSelectionHudController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\CreditsController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\CreditsHudController.cs" />
@@ -136,12 +137,13 @@
      <Compile Include="Assets\MyAssets\Scripts\MainMenuTextController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\MantisController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\MySmoothFollow.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\PerrerController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PersistantData.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\MyAssets\Scripts\PlayerMovementController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PortalController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PowerupController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\PreferencesManager.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\ProjectileController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\RETIRED_FlameThrowerController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\RETIRED_SpeedBoostController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\SecretLevel1GameController.cs" />
@@ -149,10 +151,11 @@
      <Compile Include="Assets\MyAssets\Scripts\SocialController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\SpawnPoint.cs" />
      <Compile Include="Assets\MyAssets\Scripts\StarController.cs" />
-     <Compile Include="Assets\MyAssets\Scripts\StarFighterLevel1GameController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\StarFighter\StarFighterLevel1GameController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\StatModiferHudController.cs" />
      <Compile Include="Assets\MyAssets\Scripts\TEST.cs" />
      <Compile Include="Assets\MyAssets\Scripts\TikiBeeController.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\TitanShipController.cs" />
      <Compile Include="Assets\Scripts\AudioOffset.cs" />
      <Compile Include="Assets\Scripts\CaptureNormals.cs" />
      <Compile Include="Assets\Scripts\Punch.cs" />
@@ -167,7 +170,6 @@
      <Compile Include="Assets\SmoothFollowAdvanced\Scripts\General\LimitedFloat.cs" />
      <Compile Include="Assets\SmoothFollowAdvanced\Scripts\SmoothCameraAdvanced.cs" />
      <Compile Include="Assets\SmoothFollowAdvanced\Scripts\UnityObject.cs" />
-     <Compile Include="Assets\TitanShipController.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Moba_Camera\Readme\readme.txt" />

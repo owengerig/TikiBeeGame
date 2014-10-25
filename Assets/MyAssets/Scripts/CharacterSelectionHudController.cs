@@ -34,15 +34,24 @@ namespace TikiBeeGame {
             if (GUI.Button(new Rect(200, 60, 230, 60), "Back", menuButtonStyle)) {
                 LevelController.loadMainMenuScene();
             }
-            if (GUI.Button(new Rect(35, 120, 880, 950), "", invisibleButtonStyle)) {
-                PreferencesManager.setTikiBee();
-                LevelController.loadStatModifierScene();
+            if (Input.GetMouseButtonDown(0)) {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D hitCollider = Physics2D.OverlapPoint(mousePosition);
+                if (hitCollider) {
+                    if (hitCollider.name.Equals("TikiBee")) {
+                        PreferencesManager.setTikiBee();
+                        LevelController.loadStatModifierScene();
+                    }
+                    if (hitCollider.name.Equals("Bombus")) {
+                        PreferencesManager.setBombus();
+                        LevelController.loadStatModifierScene();
+                    }
+                    if (hitCollider.name.Equals("Perrer")) {
+                        PreferencesManager.setPerrer();
+                        LevelController.loadStatModifierScene();
+                    }
+                }
             }
-            if (GUI.Button(new Rect(1040, 120, 880, 920), "", invisibleButtonStyle)) {
-                PreferencesManager.setBombus();
-                LevelController.loadStatModifierScene();
-            }
-
         }
     }
 }

@@ -5,24 +5,24 @@ using UnityEngine;
 namespace TikiBeeGame {
     class BombController : EnemyController {
 
-        public Transform bombSpawner;
+        public Transform bombSpawner = null;
 
         public float bombRadius = 10f;			// Radius within which enemies are killed.
-        public AudioClip boom;					// Audioclip of explosion.
-        public AudioClip fuse;					// Audioclip of fuse.
+        public AudioClip boom = null;					// Audioclip of explosion.
+        public AudioClip fuse = null;					// Audioclip of fuse.
         private float fuseTime = Random.Range(.7f,2);
         public float volume = .1f;
 
-        public List<Sprite> bombSprites; //set in editor
+        public List<Sprite> bombSprites = null; //set in editor
 
 
         //private LayBombs layBombs;				// Reference to the player's LayBombs script.
         //private PickupSpawner pickupSpawner;	// Reference to the PickupSpawner script.
-        public ParticleSystem explosionFX;	// Reference to the particle system of the explosion effect.
-        public ParticleSystem sparksFX;	// Reference to the particle system of the explosion effect.
+        public ParticleSystem explosionFX = null;	// Reference to the particle system of the explosion effect.
+        public ParticleSystem sparksFX = null;	// Reference to the particle system of the explosion effect.
 
 
-        virtual public void spawn() {
+        override public void spawn() {
             this.gameObject.SetActive(true);
             this.enabled = true;
             transform.position = bombSpawner.position;

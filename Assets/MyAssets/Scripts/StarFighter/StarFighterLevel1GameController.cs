@@ -12,7 +12,7 @@ namespace TikiBeeGame {
 
             //spawnPlayers();  no need to spawn players at this time
         }
-        void Update() {
+        override public void Update() {
             if (!PreferencesManager.CURRENT_PLAYER) {
                 PreferencesManager.CURRENT_PLAYER = titan;
             }

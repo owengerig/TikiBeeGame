@@ -13,12 +13,8 @@ using UnityEngine;
 namespace TikiBeeGame {
     public static class SpawnPoint {
 
-        private static float yExtent = Camera.main.camera.orthographicSize;
-        private static float xExtent = yExtent * Screen.width / Screen.height;
-        private static float xExtendWithInsideBuffer = xExtent - 1.0f;
-        private static float yExtendWithInsideBuffer = yExtent - 1.0f;
-        private static float xExtendWithOutsideBuffer = xExtent + 1.0f;
-        private static float yExtendWithOutsideBuffer = yExtent + 1.0f;
+        //private static float yExtent = Camera.main.camera.orthographicSize;
+        //private static float xExtent = yExtent * Screen.width / Screen.height;
 
         private static GameHudController gameHudController;
 
@@ -27,8 +23,6 @@ namespace TikiBeeGame {
             if (Camera.main == null) {
                 return new Vector3(0f, 0f, -1.0f);
             }
-
-            Vector3 returnVal = new Vector3(0f, 0f, 0f);
 
             float screenX = Random.Range(0.0f, Camera.main.pixelWidth);
             float screenY = Random.Range(Camera.main.pixelHeight / 4.5f, Camera.main.pixelHeight);

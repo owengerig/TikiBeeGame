@@ -7,11 +7,12 @@ using UnityEngine;
 namespace TikiBeeGame {
     static class PreferencesManager {
 
-        static public string GAME_VERSION = "0.0.1.598";
+        static public string GAME_VERSION = "0.0.1.606";
 
         static public bool END_GAME = false;  //used for signalling to the game controller to stop spawning because of endgame
         static public bool TIKIBEE_SELECTED = false;
         static public bool BOMBUS_SELECTED = false;
+        static public bool PERRER_SELECTED = false;
         static public bool IS_WALKING = true; // false is for flying, true is for walking
         static public int DESTINATION_LEVEL_INDEX = 0;  //used when returning from secret levels and level map controller
         static public int SOURCE_LEVEL_INDEX = 0;  //used by level map controller
@@ -29,6 +30,7 @@ namespace TikiBeeGame {
             END_GAME = false;
             TIKIBEE_SELECTED = false;
             BOMBUS_SELECTED = false;
+            PERRER_SELECTED = false;
             IS_WALKING = true;
             DESTINATION_LEVEL_INDEX = 0;
             SOURCE_LEVEL_INDEX = 0;
@@ -54,10 +56,17 @@ namespace TikiBeeGame {
         public static void setBombus(){
             BOMBUS_SELECTED = true;
             TIKIBEE_SELECTED = false;
+            PERRER_SELECTED = false;
         }
         public static void setTikiBee() {
             TIKIBEE_SELECTED = true;
             BOMBUS_SELECTED = false;
+            PERRER_SELECTED = false;
+        }
+        public static void setPerrer() {
+            TIKIBEE_SELECTED = false;
+            BOMBUS_SELECTED = false;
+            PERRER_SELECTED = true;
         }
         public static int getPlayerHighScoreAndUpdate() {
             SaveObject so = PersistantData.Load();

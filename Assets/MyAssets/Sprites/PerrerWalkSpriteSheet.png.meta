@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: fb248daae518f0e41824fe1319ae3333
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PerrerWalkSpriteSheet_0
+    21300002: PerrerWalkSpriteSheet_1
+    21300004: PerrerWalkSpriteSheet_2
+    21300006: PerrerWalkSpriteSheet_3
+    21300008: PerrerWalkSpriteSheet_4
+    21300010: PerrerWalkSpriteSheet_5
+    21300012: PerrerWalkSpriteSheet_6
+    21300014: PerrerWalkSpriteSheet_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PerrerWalkSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 55
+        width: 136
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 55
+        width: 136
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 55
+        width: 116
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 55
+        width: 131
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 55
+        width: 132
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 55
+        width: 132
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 55
+        width: 127
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PerrerWalkSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 55
+        width: 136
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

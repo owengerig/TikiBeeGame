@@ -73,34 +73,6 @@ namespace TikiBeeGame
             theScale.y *= -1;
             transform.localScale = theScale;
         }
-		virtual public void EnforceBounds()
-		{
-            return;
-			// 1
-			Vector3 newPosition = transform.position; 
-			Camera mainCamera = Camera.main;
-			Vector3 cameraPosition = mainCamera.transform.position;
-			float yMax = mainCamera.orthographicSize;
-			
-			// 2
-            float xDist = mainCamera.aspect * mainCamera.orthographicSize;// -.5f; 
-			float xMax = cameraPosition.x + xDist;
-			float xMin = cameraPosition.x - xDist;
-			
-			// 3
-			if ( newPosition.x < xMin-1 || newPosition.x > xMax ) {
-				newPosition.x = Mathf.Clamp( newPosition.x, xMin, xMax );
-				LAST_CLICKED_POSITION.x = -LAST_CLICKED_POSITION.x;
-			}
-			
-			//vertical bounds
-			if (newPosition.y < -yMax || newPosition.y > yMax) {
-				newPosition.y = Mathf.Clamp( newPosition.y, -yMax, yMax );
-				LAST_CLICKED_POSITION.y = -LAST_CLICKED_POSITION.y;
-			}
-			// 4
-			transform.position = newPosition;
-		}
 		
 		virtual public void DestroyMe() {
             Logger.logCharacter("Destoring char " + this.tag);

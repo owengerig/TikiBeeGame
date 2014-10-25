@@ -32,6 +32,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: IsMoving
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: IsJumping
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -284,17 +296,17 @@ StateMachine:
       - {fileID: 110186067}
       - {fileID: 110156606}
     data:
-      first: {fileID: 110200436}
+      first: {fileID: 110249652}
       second:
-      - {fileID: 110199672}
+      - {fileID: 110126275}
     data:
       first: {fileID: 110226797}
       second:
       - {fileID: 110113198}
     data:
-      first: {fileID: 110249652}
+      first: {fileID: 110200436}
       second:
-      - {fileID: 110126275}
+      - {fileID: 110199672}
     data:
       first: {fileID: 110279203}
       second: []

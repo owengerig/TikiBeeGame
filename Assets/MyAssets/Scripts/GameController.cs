@@ -20,19 +20,26 @@ namespace TikiBeeGame{
 
         public GameObject tikibee = null;
         public GameObject bombus = null;
+        public GameObject perrer = null;
 
         virtual public void spawnPlayers() {
             if (PreferencesManager.CURRENT_PLAYER == null) {
-                if (!PreferencesManager.TIKIBEE_SELECTED && !PreferencesManager.BOMBUS_SELECTED) {
+                if (!PreferencesManager.TIKIBEE_SELECTED && !PreferencesManager.BOMBUS_SELECTED && !PreferencesManager.PERRER_SELECTED) {
                     //PreferencesManager.setTikiBee();
                     //if (PreferencesManager.CURRENT_PLAYER == null) {
                     //    PreferencesManager.CURRENT_PLAYER = Instantiate(tikibee) as GameObject;
                     //}
 
-                    PreferencesManager.setBombus();
+                    //PreferencesManager.setBombus();
+                    //if (PreferencesManager.CURRENT_PLAYER == null) {
+                    //    PreferencesManager.CURRENT_PLAYER = Instantiate(bombus) as GameObject;
+                    //}
+
+                    PreferencesManager.setPerrer();
                     if (PreferencesManager.CURRENT_PLAYER == null) {
-                        PreferencesManager.CURRENT_PLAYER = Instantiate(bombus) as GameObject;
+                        PreferencesManager.CURRENT_PLAYER = Instantiate(perrer) as GameObject;
                     }
+
                 } else if (PreferencesManager.TIKIBEE_SELECTED) {
                     PreferencesManager.setTikiBee();
                     if (PreferencesManager.CURRENT_PLAYER == null) {
@@ -42,6 +49,11 @@ namespace TikiBeeGame{
                     PreferencesManager.setBombus();
                     if (PreferencesManager.CURRENT_PLAYER == null) {
                         PreferencesManager.CURRENT_PLAYER = Instantiate(bombus) as GameObject;
+                    }
+                } else if (PreferencesManager.PERRER_SELECTED) {
+                    PreferencesManager.setPerrer();
+                    if (PreferencesManager.CURRENT_PLAYER == null) {
+                        PreferencesManager.CURRENT_PLAYER = Instantiate(perrer) as GameObject;
                     }
                 }
                 PreferencesManager.getPlayerController().spawn();

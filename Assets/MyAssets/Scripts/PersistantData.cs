@@ -69,6 +69,16 @@ namespace TikiBeeGame {
             so.BB_PLAYER_BURST_COOLDOWN = 0;
             so.BB_PLAYER_BURST_RADIUS = 0;
             so.BB_PLAYER_BURST_DAMAGE = 0;
+            so.PR_PLAYER_HEALTH_MODIFIER = 0;
+            so.PR_PLAYER_SCORE_MODIFIER = 0;
+            so.PR_PLAYER_SHIELD_DURATION = 0;
+            so.PR_PLAYER_SHIELD_COOLDOWN = 0;
+            so.PR_PLAYER_SPEED_BOOST_DURATION = 0;
+            so.PR_PLAYER_SPEED_BOOST_COOLDOWN = 0;
+            so.PR_PLAYER_SPEED_BOOST_MULTIPLIER = 0;
+            so.PR_PLAYER_BURST_COOLDOWN = 0;
+            so.PR_PLAYER_BURST_RADIUS = 0;
+            so.PR_PLAYER_BURST_DAMAGE = 0;
 
 			Save (so);
 		}
@@ -96,6 +106,7 @@ namespace TikiBeeGame {
         public float TB_PLAYER_BURST_COOLDOWN = 0;
         public float TB_PLAYER_BURST_RADIUS = 0;
         public float TB_PLAYER_BURST_DAMAGE = 0;
+
         public float BB_PLAYER_SPEED_MODIFIER = 0;
         public float BB_PLAYER_HEALTH_MODIFIER = 0;
         public float BB_PLAYER_SCORE_MODIFIER = 0;
@@ -108,6 +119,18 @@ namespace TikiBeeGame {
         public float BB_PLAYER_BURST_RADIUS = 0;
         public float BB_PLAYER_BURST_DAMAGE = 0;
 
+        public float PR_PLAYER_SPEED_MODIFIER = 0;
+        public float PR_PLAYER_HEALTH_MODIFIER = 0;
+        public float PR_PLAYER_SCORE_MODIFIER = 0;
+        public float PR_PLAYER_SHIELD_DURATION = 0;
+        public float PR_PLAYER_SHIELD_COOLDOWN = 0;
+        public float PR_PLAYER_SPEED_BOOST_DURATION = 0;
+        public float PR_PLAYER_SPEED_BOOST_COOLDOWN = 0;
+        public float PR_PLAYER_SPEED_BOOST_MULTIPLIER = 0;
+        public float PR_PLAYER_BURST_COOLDOWN = 0;
+        public float PR_PLAYER_BURST_RADIUS = 0;
+        public float PR_PLAYER_BURST_DAMAGE = 0;
+
         public SaveObject() {
         }
 
@@ -116,6 +139,7 @@ namespace TikiBeeGame {
             PLAYER_CURRENCY = (int)info.GetValue("PLAYER_CURRENCY", typeof(int));
             PLAYER_HIGH_SCORE = (int)info.GetValue("PLAYER_HIGH_SCORE", typeof(int));
             GAME_VERSION = (string)info.GetValue("GAME_VERSION", typeof(string));
+
             TB_PLAYER_HEALTH_MODIFIER = (float)info.GetValue("TB_PLAYER_HEALTH_MODIFIER", typeof(float));
             TB_PLAYER_SPEED_MODIFIER = (float)info.GetValue("TB_PLAYER_SPEED_MODIFIER", typeof(float));
             TB_PLAYER_SCORE_MODIFIER = (float)info.GetValue("TB_PLAYER_SCORE_MODIFIER", typeof(float));
@@ -126,9 +150,10 @@ namespace TikiBeeGame {
             TB_PLAYER_SPEED_BOOST_MULTIPLIER = (float)info.GetValue("TB_PLAYER_SPEED_BOOST_MULTIPLIER", typeof(float));
             TB_PLAYER_BURST_COOLDOWN = (float)info.GetValue("TB_PLAYER_BURST_COOLDOWN", typeof(float));
             TB_PLAYER_BURST_RADIUS = (float)info.GetValue("TB_PLAYER_BURST_RADIUS", typeof(float));
-            BB_PLAYER_BURST_DAMAGE = (float)info.GetValue("BB_PLAYER_BURST_DAMAGE", typeof(float));
+            TB_PLAYER_BURST_DAMAGE = (float)info.GetValue("TB_PLAYER_BURST_DAMAGE", typeof(float));
+
             BB_PLAYER_HEALTH_MODIFIER = (float)info.GetValue("BB_PLAYER_HEALTH_MODIFIER", typeof(float));
-            TB_PLAYER_SPEED_MODIFIER = (float)info.GetValue("TB_PLAYER_SPEED_MODIFIER", typeof(float));
+            BB_PLAYER_SPEED_MODIFIER = (float)info.GetValue("BB_PLAYER_SPEED_MODIFIER", typeof(float));
             BB_PLAYER_SCORE_MODIFIER = (float)info.GetValue("BB_PLAYER_SCORE_MODIFIER", typeof(float));
             BB_PLAYER_SHIELD_DURATION = (float)info.GetValue("BB_PLAYER_SHIELD_DURATION", typeof(float));
             BB_PLAYER_SHIELD_COOLDOWN = (float)info.GetValue("BB_PLAYER_SHIELD_COOLDOWN", typeof(float));
@@ -138,6 +163,18 @@ namespace TikiBeeGame {
             BB_PLAYER_BURST_COOLDOWN = (float)info.GetValue("BB_PLAYER_BURST_COOLDOWN", typeof(float));
             BB_PLAYER_BURST_RADIUS = (float)info.GetValue("BB_PLAYER_BURST_RADIUS", typeof(float));
             BB_PLAYER_BURST_DAMAGE = (float)info.GetValue("BB_PLAYER_BURST_DAMAGE", typeof(float));
+
+            PR_PLAYER_HEALTH_MODIFIER = (float)info.GetValue("PR_PLAYER_HEALTH_MODIFIER", typeof(float));
+            PR_PLAYER_SPEED_MODIFIER = (float)info.GetValue("PR_PLAYER_SPEED_MODIFIER", typeof(float));
+            PR_PLAYER_SCORE_MODIFIER = (float)info.GetValue("PR_PLAYER_SCORE_MODIFIER", typeof(float));
+            PR_PLAYER_SHIELD_DURATION = (float)info.GetValue("PR_PLAYER_SHIELD_DURATION", typeof(float));
+            PR_PLAYER_SHIELD_COOLDOWN = (float)info.GetValue("PR_PLAYER_SHIELD_COOLDOWN", typeof(float));
+            PR_PLAYER_SPEED_BOOST_DURATION = (float)info.GetValue("PR_PLAYER_SPEED_BOOST_DURATION", typeof(float));
+            PR_PLAYER_SPEED_BOOST_COOLDOWN = (float)info.GetValue("PR_PLAYER_SPEED_BOOST_COOLDOWN", typeof(float));
+            PR_PLAYER_SPEED_BOOST_MULTIPLIER = (float)info.GetValue("PR_PLAYER_SPEED_BOOST_MULTIPLIER", typeof(float));
+            PR_PLAYER_BURST_COOLDOWN = (float)info.GetValue("PR_PLAYER_BURST_COOLDOWN", typeof(float));
+            PR_PLAYER_BURST_RADIUS = (float)info.GetValue("PR_PLAYER_BURST_RADIUS", typeof(float));
+            PR_PLAYER_BURST_DAMAGE = (float)info.GetValue("PR_PLAYER_BURST_DAMAGE", typeof(float));
         }
 
         //Serialization function.
@@ -156,6 +193,7 @@ namespace TikiBeeGame {
             info.AddValue("TB_PLAYER_BURST_COOLDOWN", (TB_PLAYER_BURST_COOLDOWN));
             info.AddValue("TB_PLAYER_BURST_RADIUS", (TB_PLAYER_BURST_RADIUS));
             info.AddValue("TB_PLAYER_BURST_DAMAGE", (TB_PLAYER_BURST_DAMAGE));
+
             info.AddValue("BB_PLAYER_HEALTH_MODIFIER", (BB_PLAYER_HEALTH_MODIFIER));
             info.AddValue("BB_PLAYER_SPEED_MODIFIER", (BB_PLAYER_SPEED_MODIFIER));
             info.AddValue("BB_PLAYER_SCORE_MODIFIER", (BB_PLAYER_SCORE_MODIFIER));
@@ -167,6 +205,18 @@ namespace TikiBeeGame {
             info.AddValue("BB_PLAYER_BURST_COOLDOWN", (BB_PLAYER_BURST_COOLDOWN));
             info.AddValue("BB_PLAYER_BURST_RADIUS", (BB_PLAYER_BURST_RADIUS));
             info.AddValue("BB_PLAYER_BURST_DAMAGE", (BB_PLAYER_BURST_DAMAGE));
+
+            info.AddValue("PR_PLAYER_HEALTH_MODIFIER", (PR_PLAYER_HEALTH_MODIFIER));
+            info.AddValue("PR_PLAYER_SPEED_MODIFIER", (PR_PLAYER_SPEED_MODIFIER));
+            info.AddValue("PR_PLAYER_SCORE_MODIFIER", (PR_PLAYER_SCORE_MODIFIER));
+            info.AddValue("PR_PLAYER_SHIELD_DURATION", (PR_PLAYER_SHIELD_DURATION));
+            info.AddValue("PR_PLAYER_SHIELD_COOLDOWN", (PR_PLAYER_SHIELD_COOLDOWN));
+            info.AddValue("PR_PLAYER_SPEED_BOOST_DURATION", (PR_PLAYER_SPEED_BOOST_DURATION));
+            info.AddValue("PR_PLAYER_SPEED_BOOST_COOLDOWN", (PR_PLAYER_SPEED_BOOST_COOLDOWN));
+            info.AddValue("PR_PLAYER_SPEED_BOOST_MULTIPLIER", (PR_PLAYER_SPEED_BOOST_MULTIPLIER));
+            info.AddValue("PR_PLAYER_BURST_COOLDOWN", (PR_PLAYER_BURST_COOLDOWN));
+            info.AddValue("PR_PLAYER_BURST_RADIUS", (PR_PLAYER_BURST_RADIUS));
+            info.AddValue("PR_PLAYER_BURST_DAMAGE", (PR_PLAYER_BURST_DAMAGE));
         }
     }
 }

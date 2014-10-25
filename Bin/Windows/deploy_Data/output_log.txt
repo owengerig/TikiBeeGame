@@ -19,21 +19,7 @@ Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Proje
 Loading C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.067 seconds
+- Completed reload, in  0.076 seconds
 desktop: 1920x1200 60Hz; virtual: 1920x1200 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.270001 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 223.
-Total: 0.550265 ms (FindLiveObjects: 0.013421 ms CreateObjectMapping: 0.006710 ms MarkObjects: 0.077763 ms  DeleteObjects: 0.052894 ms)
-
-UnloadTime: 0.455133 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 227.
-Total: 1.349216 ms (FindLiveObjects: 0.015789 ms CreateObjectMapping: 0.016579 ms MarkObjects: 0.175658 ms  DeleteObjects: 0.014605 ms)
-

@@ -26,6 +26,7 @@ namespace TikiBeeGame
         public Texture2D backHudIcon;
         public Texture2D walkHudIcon;
         public Texture2D flyHudIcon;
+        public Texture2D gunHudIcon;
 
 
 		//cooldown indicators
@@ -221,14 +222,22 @@ namespace TikiBeeGame
             }
 
 
-            if(PreferencesManager.IS_WALKING){
-                if (GUI.Button(movementButtonHudRect, flyHudIcon)) {
-                    PreferencesManager.setFlyMovement();
+
+            if (PreferencesManager.PERRER_SELECTED) {
+                if (GUI.Button(movementButtonHudRect, gunHudIcon)) {
+                    PreferencesManager.getPlayerController().fire();
                 }
-            }else{
-                if (GUI.Button(movementButtonHudRect, walkHudIcon)) {
-                    PreferencesManager.setWalkMovement();                
+            } else {
+                if (PreferencesManager.IS_WALKING) {
+                    if (GUI.Button(movementButtonHudRect, flyHudIcon)) {
+                        PreferencesManager.setFlyMovement();
+                    }
+                } else {
+                    if (GUI.Button(movementButtonHudRect, walkHudIcon)) {
+                        PreferencesManager.setWalkMovement();
+                    }
                 }
+
             }
 
             GUI.EndGroup();

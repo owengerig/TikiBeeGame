@@ -12,7 +12,7 @@ TagManager:
   - Powerup
   - Text
   - GameMechanics
-  - 
+  - Projectile
   - DeathTrigger
   - ExplosionFX
   - BombPickup

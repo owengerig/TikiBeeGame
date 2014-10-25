@@ -16,13 +16,13 @@ namespace TikiBeeGame {
         public bool useFixedUpdate = false;
         public bool pinCamera = false;
 
-        private float leftWallXWorld = 0;
+        //private float leftWallXWorld = 0;
         private float leftWallXScreen = 0;
-        private float rightWallXWorld = 0;
+        //private float rightWallXWorld = 0;
         private float rightWallXScreen = 0;
-        private float topWallYWorld = 0;
+        //private float topWallYWorld = 0;
         private float topWallYScreen = 0;
-        private float bottomWallYWorld = 0;
+        //private float bottomWallYWorld = 0;
         private float bottomWallYScreen = 0;
 
         void Start() {
@@ -30,16 +30,16 @@ namespace TikiBeeGame {
         }
         void updateWalls() {
 
-            leftWallXWorld = leftEndMarker.position.x;
+            //leftWallXWorld = leftEndMarker.position.x;
             leftWallXScreen = camera.WorldToScreenPoint(leftEndMarker.position).x;
 
-            rightWallXWorld = rightEndMarker.position.x - Screen.width;
+            //rightWallXWorld = rightEndMarker.position.x - Screen.width;
             rightWallXScreen = camera.WorldToScreenPoint(rightEndMarker.position).x - Screen.width;
 
-            topWallYWorld = topEndMarker.position.y - Screen.height;
+            //topWallYWorld = topEndMarker.position.y - Screen.height;
             topWallYScreen = camera.WorldToScreenPoint(topEndMarker.position).y - Screen.height;
 
-            bottomWallYWorld = bottomEndMarker.position.y;
+            //bottomWallYWorld = bottomEndMarker.position.y;
             bottomWallYScreen = camera.WorldToScreenPoint(bottomEndMarker.position).y;
         }
 
@@ -58,7 +58,6 @@ namespace TikiBeeGame {
         void updateCameraPosition() {
             updateWalls();
             if (PreferencesManager.CURRENT_PLAYER.transform) {
-
                 if (!pinCamera) {
                     Vector3 delta = PreferencesManager.CURRENT_PLAYER.transform.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)); //(new Vector3(0.5, 0.5, point.z));
                     Vector3 destination = (transform.position + delta);
@@ -86,7 +85,7 @@ namespace TikiBeeGame {
                 float playerY = PreferencesManager.CURRENT_PLAYER.transform.position.y;
                 if ((Math.Abs(playerX - leftEndMarker.position.x) < .5 && !PreferencesManager.getPlayerController().MOVING_RIGHT) ||
                     (Math.Abs(playerX - rightEndMarker.position.x) < .5 && PreferencesManager.getPlayerController().MOVING_RIGHT) ||
-                    (Math.Abs(playerY - topEndMarker.position.x) < .01 && PreferencesManager.getPlayerController().MOVING_UP)) {
+                    (Math.Abs(playerY - topEndMarker.position.y) < .6 && PreferencesManager.getPlayerController().MOVING_UP)) {
                     // || (Math.Abs(playerY - bottomEndMarker.position.x) < .5 && !PreferencesManager.getPlayerController().MOVING_UP)) {
 
                     PreferencesManager.getPlayerController().MOVE_ALLOWED = false;
