@@ -19,7 +19,8 @@ Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Proje
 Loading C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.076 seconds
-desktop: 1920x1200 60Hz; virtual: 1920x1200 at 0,0
+- Completed reload, in  0.066 seconds
 <RI> Initializing input.
 <RI> Input initialized.
+desktop: 1920x1200 60Hz; virtual: 1920x1200 at 0,0
+Platform assembly: C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Bin\Windows\deploy_Data\Managed\System.Core.dll (this message is harmless)
