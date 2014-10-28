@@ -7,3 +7,4 @@ C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Tem
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\Temp\UnityVS_bin\Debug\UnityEditor.xml
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\oweng_000\Dropbox\Coding\unity workspace\Unity Projects\TikiBeeGame\obj\Debug\UnityVS.TikiBeeGame.CSharp.csprojResolveAssemblyReference.cache
