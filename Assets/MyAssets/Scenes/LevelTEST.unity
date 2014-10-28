@@ -10631,6 +10631,48 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 3.96438527, y: .809130192}
   m_Center: {x: .0344696045, y: -1.54426074}
+--- !u!1 &997658709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 997658711}
+  - 114: {fileID: 997658710}
+  m_Layer: 0
+  m_Name: Joystick
+  m_TagString: GameMechanics
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &997658710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997658709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925335ce927e60343a81f1d9056fb39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0}
+  tapCount: 0
+  gui: {fileID: 13100000, guid: 0215cddee2d284e9c9bda1dbe42f829c, type: 2}
+--- !u!4 &997658711
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997658709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.9013767, y: .270035386, z: 5}
+  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
 --- !u!1 &1013685400
 GameObject:
   m_ObjectHideFlags: 0
@@ -21640,6 +21682,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: da9f2857f14a67243b5eb7e386ae56d4, type: 2}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 997658710}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da9f2857f14a67243b5eb7e386ae56d4, type: 2}
   m_RootGameObject: {fileID: 2063779994}

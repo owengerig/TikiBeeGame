@@ -7,7 +7,7 @@ using UnityEngine;
 namespace TikiBeeGame {
     static class PreferencesManager {
 
-        static public string GAME_VERSION = "0.0.1.606";
+        static public string GAME_VERSION = "0.0.1.607";
 
         static public bool END_GAME = false;  //used for signalling to the game controller to stop spawning because of endgame
         static public bool TIKIBEE_SELECTED = false;
@@ -70,14 +70,17 @@ namespace TikiBeeGame {
         }
         public static int getPlayerHighScoreAndUpdate() {
             SaveObject so = PersistantData.Load();
-            int currentScore = getPlayerController().SCORE;
-            if (currentScore > so.PLAYER_HIGH_SCORE) {
-                so.PLAYER_HIGH_SCORE = currentScore;
-                PersistantData.Save(so);
-                return currentScore;
-            } else {
-                return so.PLAYER_HIGH_SCORE;
+            if (PreferencesManager.CURRENT_PLAYER) {
+                int currentScore = getPlayerController().SCORE;
+                if (currentScore > so.PLAYER_HIGH_SCORE) {
+                    so.PLAYER_HIGH_SCORE = currentScore;
+                    PersistantData.Save(so);
+                    return currentScore;
+                } else {
+                    return so.PLAYER_HIGH_SCORE;
+                }
             }
+            return 0;
         }
     }
 }
