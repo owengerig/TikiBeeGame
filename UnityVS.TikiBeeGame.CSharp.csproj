@@ -7,16 +7,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7A7F3D73-35D1-51C6-2373-2C3A0FA8A2A9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -86,7 +84,6 @@
     <Compile Include="Assets\2DRPK\Scripts\PlayerSimpleHealth.cs" />
     <Compile Include="Assets\2DRPK\Scripts\SwitchBackgroundColor.cs" />
     <Compile Include="Assets\2DRPK\Scripts\VerticalMovingPlatform.cs" />
-    <Compile Include="Assets\MyAssets\Scripts\CreditTextController.cs" />
     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Extensions.cs" />
     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\MeshPiece.cs" />
     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabManager.cs" />
@@ -111,7 +108,6 @@
     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoSwitchTarget.cs" />
     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoTarget.cs" />
     <Compile Include="Assets\Moba_Camera\TestFiles\Scripts\DemoUI_Controls.cs" />
-    <Compile Include="Assets\MyAssets\Scripts\JoystickInput.cs" />
     <Compile Include="Assets\MyAssets\Scripts\BackgroundController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\BaseCharacterController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\BombController.cs" />
@@ -119,6 +115,7 @@
     <Compile Include="Assets\MyAssets\Scripts\BombusController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\BulletController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\CharacterSelectionHudController.cs" />
+    <Compile Include="Assets\MyAssets\Scripts\CreditTextController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\CreditsController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\CreditsHudController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\DoorController.cs" />
@@ -133,6 +130,7 @@
     <Compile Include="Assets\MyAssets\Scripts\HeliWallController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\HudController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\InstantDeathController.cs" />
+    <Compile Include="Assets\MyAssets\Scripts\JoystickInput.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level1GameController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level2GameController.cs" />
     <Compile Include="Assets\MyAssets\Scripts\Level3GameController.cs" />
@@ -179,6 +177,86 @@
     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\General\LimitedFloat.cs" />
     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\SmoothCameraAdvanced.cs" />
     <Compile Include="Assets\SmoothFollowAdvanced\Scripts\UnityObject.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dFont.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dFontData.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dTextGeomGen.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dTextMesh.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Gui\tk2dButton.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Runtime\tk2dResource.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Runtime\tk2dSystem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Runtime\tk2dUpdateManager.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dAnimatedSprite.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dBaseSprite.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dClippedSprite.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dEditorSpriteDataUnloader.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dPixelPerfectHelper.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dRuntimeSpriteCollection.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSlicedSprite.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSprite.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteAnimation.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteAnimator.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteAttachPoint.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollection.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollectionData.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollectionInterfaces.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollectionSize.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteFromTexture.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteGeomGen.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dStaticSpriteBatcher.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dTiledSprite.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\tk2dUtil.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMap.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapBuilderUtil.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapChunks.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapColliderBuilder.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapColliderBuilder2D.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapData.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapMeshBuilder.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoCoin.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoFollowCam.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoPlayer.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIBaseItemControl.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDragItem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDropDownItem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDropDownMenu.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIHoverItem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIMultiStateToggleButton.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIProgressBar.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIScrollableArea.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIScrollbar.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUISoundItem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUITextInput.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIToggleButton.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIToggleButtonGroup.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIToggleControl.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUITweenItem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIUpDownButton.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIUpDownHoverButton.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIAudioManager.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUICamera.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIItem.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUILayout.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUILayoutContainer.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUILayoutContainerSizer.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIManager.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIMask.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUISpriteAnimator.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUITime.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUITouch.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIBaseDemoController.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo2Controller.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo3Controller.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo5Controller.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoAnimController.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoButtonController.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoCameraController.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoReloadController.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoRuntimeSpriteController.cs" />
     <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\DLAA.shader" />
     <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
@@ -261,6 +339,22 @@
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\LitCutoutVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d_demo\Credits.txt" />
+    <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
+    <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2012\UnityVS.CSharp.targets" />
 </Project>
